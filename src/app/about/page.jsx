@@ -1,11 +1,13 @@
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { Container } from '@/components/Container'
+import AboutFeatures from './components/AboutFeatures'
 
 export default function About() {
   return (
     <>
       <Header />
+      
       <main className="bg-white">
         <Container className="pt-20 pb-16 text-center">
           <h1 className="text-4xl font-display font-bold text-slate-900 sm:text-5xl">
@@ -39,9 +41,10 @@ export default function About() {
             </div>
           </section>
         </Container>
-      </main>
-      <Footer />
+        <AboutFeatures/>
+       </main>
+    
+       <Footer />
     </>
   )
 }
-
