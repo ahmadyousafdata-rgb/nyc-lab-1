@@ -61,7 +61,7 @@ export default function BlogPage() {
       <main className="bg-white py-24 sm:py-32">
         <Container className="text-center">
           <h1 className="text-4xl font-display font-bold text-slate-900 sm:text-5xl">
-            nyxLab Blog
+            nyx Lab Blog
           </h1>
           <p className="mt-6 text-lg text-slate-700 max-w-2xl mx-auto">
             Insights, tips, and updates on AI automation for real businesses.

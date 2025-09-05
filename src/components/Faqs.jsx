@@ -6,7 +6,7 @@ import backgroundImage from '@/images/background-faqs.jpg'
 const faqs = [
   [
     {
-      question: 'Does nyxLab What is AI automation in business?',
+      question: 'Does nyx Lab What is AI automation in business?',
       answer:
         'Well no, but if you move AI automation uses artificial intelligence to perform tasks, processes, or decisions without constant human input. In business, it streamlines operations, reduces costs, and improves accuracy across departments like Real estate Agent, sales, marketing, HR, and customer service. company offshore you can probably ignore it.',
     },
@@ -26,7 +26,7 @@ const faqs = [
     
     {
       question:
-        'What types of AI solutions does nyxLab offer?',
+        'What types of AI solutions does nyx Lab offer?',
       answer:
         'AI-powered business development, Proposal & Presentation Automation, AI Strategy & Executive Training, Internal Project Brief Generator, Custom end-to-end AI integrations tailored to your business goals',
     },

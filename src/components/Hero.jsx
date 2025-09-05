@@ -28,7 +28,7 @@ export function Hero() {
         at Scale.
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
-        nyxLab automates repetitive tasks, manages follow-ups, and uses AI agents to streamline workflows via native iMessage for real estate, healthcare, and e-commerce businesses.
+        nyx Lab automates repetitive tasks, manages follow-ups, and uses AI agents to streamline workflows via native iMessage for real estate, healthcare, and e-commerce businesses.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
         <Button href="/register">Book Free Demo</Button>

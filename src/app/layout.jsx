@@ -5,11 +5,11 @@ import '@/styles/tailwind.css'
 
 export const metadata = {
   title: {
-    template: '%s - nyxLab',
-    default: 'nyxLab Automation – AI Solutions for Real Estate, Healthcare & E-Commerce',
+    template: '%s - nyx Lab',
+    default: 'nyx Lab Automation – AI Solutions for Real Estate, Healthcare & E-Commerce',
   },
   description:
-    'nyxLab provides AI automation solutions for real estate, healthcare, and e-commerce businesses. Streamline workflows, save time, and boost efficiency with intelligent automation.',
+    'nyx Lab provides AI automation solutions for real estate, healthcare, and e-commerce businesses. Streamline workflows, save time, and boost efficiency with intelligent automation.',
 }
 
 const inter = Inter({

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import { Button } from '@/components/Button'
-import { SelectField, TextField } from '@/components/Fields'
+import { SelectField, TextField, TextAreaField } from '@/components/Fields'
 import { Logo } from '@/components/Logo'
 import { SlimLayout } from '@/components/SlimLayout'
 
@@ -17,15 +17,16 @@ export default function Register() {
           <Logo className="h-10 w-auto" />
         </Link>
       </div>
-      <h2 className="mt-20 text-lg font-semibold text-gray-900">
-        Get Free Consultation
+      <h2 className="mt-12 text-lg font-semibold text-gray-900">
+        Request a Consultation
       </h2>
-      <p className="mt-2 text-sm text-gray-700">
-        Fill out the form below & we'll get back to you within 5 minutes.
+      <p className="mt-1 text-sm text-gray-700">
+        Share a few details and we’ll be in touch shortly.
       </p>
       <form
-        action="#"
-        className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2"
+        action="/api/contact"
+        method="POST"
+        className="mt-8 grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2"
       >
         <TextField
           label="First name"
@@ -42,7 +43,6 @@ export default function Register() {
           required
         />
         <TextField
-          className="col-span-full"
           label="Email address"
           name="email"
           type="email"
@@ -50,27 +50,34 @@ export default function Register() {
           required
         />
         <TextField
-         className="col-span-full"
          label="Phone Number"
          name="phone"
          type="tel"
-         placeholder="+1 (555) 123-4567"
          autoComplete="tel"
          required
         />
       
         <SelectField
           className="col-span-full"
-          label="What type of business are you in?"
+          label="Industry"
           name="Options"
         >
           <option>Real Estate</option>
-          <option>HealthCare</option>
+          <option>Healthcare</option>
           <option>E-commerce</option>
-          <option>Others</option>
+          <option>Other</option>
         </SelectField>
         
-        
+        <TextAreaField
+          className="col-span-full"
+          label="Message"
+          name="message"
+          placeholder="Real estate investor; 4 rentals. Need monthly bookkeeping + year‑end tax prep. Start this month."
+          required
+          rows={3}
+          maxLength={280}
+          hint="Keep it concise — key details only."
+        />
     
         <div className="col-span-full">
           <Button type="submit" variant="solid" color="blue" className="w-full">

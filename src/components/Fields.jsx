@@ -36,3 +36,17 @@ export function SelectField({ label, className, ...props }) {
     </div>
   )
 }
+
+export function TextAreaField({ label, className, rows = 4, hint, ...props }) {
+  let id = useId()
+
+  return (
+    <div className={className}>
+      {label && <Label id={id}>{label}</Label>}
+      <textarea id={id} rows={rows} {...props} className={clsx(formClasses, 'resize-none shadow-sm')} />
+      {hint && (
+        <p className="mt-1 text-xs text-gray-500">{hint}</p>
+      )}
+    </div>
+  )
+}

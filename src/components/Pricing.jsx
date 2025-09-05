@@ -51,42 +51,56 @@ function Plan({ name, price, description, href, features, featured = false }) {
   return (
     <section
       className={clsx(
-        'flex flex-col rounded-3xl px-6 sm:px-8',
-        featured ? 'order-first bg-blue-600 py-8 lg:order-0' : 'lg:py-8',
+        'flex flex-col rounded-3xl px-6 sm:px-8 lg:py-8 shadow-sm',
+        featured
+          ? 'order-first bg-gradient-to-br from-blue-600 to-blue-500 text-white lg:order-0'
+          : 'bg-white border border-gray-200',
       )}
     >
-      <h3 className="mt-5 font-display text-lg text-white">{name}</h3>
+      <p
+        className={clsx(
+          'order-first font-display text-4xl font-semibold tracking-tight',
+          featured ? 'text-white' : 'text-slate-900',
+        )}
+      >
+        {price}
+      </p>
+      <h3
+        className={clsx(
+          'mt-3 font-display text-xl',
+          featured ? 'text-white' : 'text-slate-900',
+        )}
+      >
+        {name}
+      </h3>
       <p
         className={clsx(
           'mt-2 text-base',
-          featured ? 'text-white' : 'text-slate-400',
+          featured ? 'text-white/90' : 'text-slate-600',
         )}
       >
         {description}
       </p>
-      <p className="order-first font-display text-5xl font-light tracking-tight text-white">
-        {price}
-      </p>
       <ul
         role="list"
         className={clsx(
-          'order-last mt-10 flex flex-col gap-y-3 text-sm',
-          featured ? 'text-white' : 'text-slate-200',
+          'order-last mt-8 flex flex-col gap-y-3 text-sm',
+          featured ? 'text-white' : 'text-slate-700',
         )}
       >
         {features.map((feature) => (
           <li key={feature} className="flex">
-            <CheckIcon className={featured ? 'text-white' : 'text-slate-400'} />
-            <span className="ml-4">{feature}</span>
+            <CheckIcon className={featured ? 'text-white' : 'text-blue-600'} />
+            <span className="ml-3">{feature}</span>
           </li>
         ))}
       </ul>
       <Button
         href={href}
         variant={featured ? 'solid' : 'outline'}
-        color="white"
+        color={featured ? 'white' : 'blue'}
         className="mt-8"
-        aria-label={`Get started with the ${name} plan for ${price}`}
+        aria-label={`Get started with ${name}`}
       >
         Schedule Demo
       </Button>
@@ -98,63 +112,62 @@ export function Pricing() {
   return (
     <section
       id="pricing"
-      aria-label="Pricing"
-      className="bg-slate-900 py-20 sm:py-32"
+      aria-label="AI Automation Pricing"
+      className="bg-white py-20 sm:py-32"
     >
       <Container>
         <div className="md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
+          <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
             <span className="relative whitespace-nowrap">
-              <SwirlyDoodle className="absolute top-1/2 left-0 h-[1em] w-full fill-blue-400" />
-              <span className="relative">Need a Custom Solution</span>
+              <SwirlyDoodle className="absolute top-1/2 left-0 h-[1em] w-full fill-blue-300" />
+              <span className="relative">AI Automation Pricing & Packages</span>
             </span>{' '}
-            for your business?
+            for Real Estate, Healthcare, and E‑commerce
           </h2>
-          <p className="mt-4 text-lg text-slate-400">
-            Let's talk about what's possible.
+          <p className="mt-4 text-lg text-slate-600">
+            Tailored plans to streamline workflows, capture more leads, and scale operations. Book a demo to get a custom quote.
           </p>
         </div>
         <div className="-mx-4 mt-16 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-3 xl:mx-0 xl:gap-x-8">
           <Plan
-            name="Lead Qualification"
-            price="AI-powered "
-            description="What's Always Included:"
+            name="Lead Qualification AI"
+            price="Custom Pricing"
+            description="Essential automation to capture, qualify, and route leads — fast."
             href="/register"
             features={[
-              'Unified number for inbound/outbound iMessage, SMS, and voice',
+              'AI intake via calls, SMS, email',
               'Automated appointment scheduling',
-              'CRM integration',
-              'Real-time analytics and reporting',
-              '24/7 customer support',
+              'CRM syncing and lead routing',
+              'Real‑time analytics and reporting',
+              '24/7 virtual assistant support',
             ]}
           />
           <Plan
             featured
-            name="For Real Estate"
-            price="AI Assistants "
-            description="What's Always Included:"
+            name="Real Estate AI Assistants"
+            price="Most Popular"
+            description="Purpose‑built automations for investors and brokerages to scale acquisition and ops."
             href="/register"
             features={[
-              'AI Assistant for calls, texts, and emails',
-              'AI Receptionist for lead routing',
-              'AI Listing Bot for property info and showings',
-              'AI Coordinator for pipeline and task follow-up',
-              'AI Recruiter for agent outreach',
-              'AI Campaigns for expireds, FSBOs, and more',
+              'AI assistant for calls, texts, emails',
+              'AI receptionist for lead routing',
+              'Listing bot for property info & showings',
+              'Pipeline follow‑ups and task automation',
+              'Agent outreach and campaign automations',
             ]}
           />
           <Plan
-            name="Automation Features"
-            price="Enterprise"
-            description="What's Always Included:"
+            name="Enterprise Automations"
+            price="Custom Scope"
+            description="Advanced workflow automation across teams and tools — security and compliance ready."
             href="/register"
             features={[
-              'Fully custom workflow development',
-              'Advanced CRM, IDX, and ad platform integrations',
+              'Custom workflow development',
+              'CRM, EHR, IDX, and ad platform integrations',
               'Dedicated account manager',
-              'White-label and multi-location options',
-              'Custom triggers and lead-routing logic',
-              'Advanced automations and custom deployment options',
+              'Multi‑location and white‑label options',
+              'Custom triggers and lead‑routing logic',
+              'Advanced deployment and monitoring',
             ]}
           />
         </div>

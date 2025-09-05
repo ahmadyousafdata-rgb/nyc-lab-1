@@ -24,7 +24,7 @@ export function CallToAction() {
             Automate Your Workflow
           </h2>
           <p className="mt-4 text-lg tracking-tight text-white">
-           nyxLab helps you automate repetitive tasks, streamline workflows, and save valuable time with AI-powered solutions.
+           nyx Lab helps you automate repetitive tasks, streamline workflows, and save valuable time with AI-powered solutions.
           </p>
           <Button href="/register" color="white" className="mt-10">
             Book a Free Demo

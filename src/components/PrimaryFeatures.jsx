@@ -16,25 +16,25 @@ const features = [
   {
     title: 'Lead Engagement',
     description:
-      "AI agents on Android and iOS, capable of booking reservations, setting reminders, and performing tasks via conversational AI. Brings lead engagement directly to mobile devices, enabling 24/7 accessibility.",
+      'AI assistants that book appointments, send reminders, and complete tasks across channels — available 24/7 to engage every lead.',
     image: screenshotPayroll,
   },
   {
-    title: 'Voice-Based Lead Qualification AI',
+    title: 'Voice Lead Qualification',
     description:
-      "Vapi is emerging as a standout tool for voice-first lead qualification — autonomously handling inbound/outbound calls, screening, scoring, and delivering summaries. Scales cold outreach without heavy manual effort.",
+      'Autonomous inbound/outbound calling to screen and score leads, summarize calls, and route qualified prospects to your calendar.',
     image: screenshotExpenses,
   },
   {
-    title: 'AI Sales Agents',
+    title: 'Omnichannel Sales Agents',
     description:
-      "SleekFlow’s AgentFlow builds AI agents that communicate across WhatsApp, Instagram, Facebook Messenger, SMS, and more, personalize lead scoring, and mimic brand tone. Manages leads wherever they connect—ideal for social-first businesses.Allows brand-controlled, chatbot-managed personalization at scale.",
+      'Consistent conversations across WhatsApp, Instagram, SMS, and email — brand‑tuned messaging, instant replies, and smart follow‑ups.',
     image: screenshotVatReturns,
   },
   {
-    title: 'AI CRM for Real Estate Agents',
+    title: 'AI CRM for Real Estate',
     description:
-      'Our AI captures leads, qualifies them by budget and location, and books showings right on your calendar—so you can focus on closing deals, not chasing paperwork.',
+      'Capture leads, qualify by location and criteria, and auto‑book showings — close more deals without the admin burden.',
     image: screenshotReporting,
   },
 ]
@@ -74,11 +74,10 @@ export function PrimaryFeatures() {
       <Container className="relative">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
-            AI Assistant Applications.
+            AI Assistant Applications
           </h2>
           <p className="mt-6 text-lg tracking-tight text-blue-100">
-            nyxLab AI Automation technology transforms your lead conversion process, automating qualification, nurturing,
-            and appointment setting across all channels.
+            AI automation for faster lead conversion: qualification, nurturing, and appointment scheduling across voice, SMS, email, and social.
           </p>
         </div>
         <TabGroup

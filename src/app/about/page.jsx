@@ -1,6 +1,7 @@
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { Container } from '@/components/Container'
+import SectionHeading from '@/components/SectionHeading'
 import AboutFeatures from './components/AboutFeatures'
 
 export default function About() {
@@ -9,35 +10,33 @@ export default function About() {
       <Header />
       
       <main className="bg-white">
-        <Container className="pt-20 pb-16 text-center">
-          <h1 className="text-4xl font-display font-bold text-slate-900 sm:text-5xl">
-            About nyxLab
-          </h1>
-          <p className="mt-6 text-lg text-slate-700 max-w-2xl mx-auto">
-            nyxLab uses AI automation to streamline workflows, manage follow-ups, and deploy intelligent agents. 
-            We help businesses save time, reduce errors, and boost operational efficiency.
-          </p>
+        <Container className="pt-20 pb-16">
+          <SectionHeading
+            eyebrow="Nyx Automation"
+            title="AI automation that saves time and drives growth"
+            description="We design AI agents and workflow automation that eliminate busywork, speed up delivery, and improve customer experience — from lead capture and follow‑ups to data integrations and SEO ops."
+            align="center"
+          />
 
-          <section className="mt-16 space-y-12 text-left">
-            <div>
-              <h2 className="text-2xl font-semibold text-slate-900">Our Mission</h2>
-              <p className="mt-3 text-slate-700">
-                Simplify business processes through AI automation while keeping solutions personal and effective.
-              </p>
+          <section className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 text-left">
+            <div className="rounded-lg border border-gray-200 bg-white p-6">
+              <h2 className="text-xl font-semibold text-slate-900">Our Mission</h2>
+              <p className="mt-2 text-sm text-slate-700">Help teams work smarter with practical AI automation — measurable time savings, faster execution, and compounding results.</p>
             </div>
 
-            <div>
-              <h2 className="text-2xl font-semibold text-slate-900">Our Vision</h2>
-              <p className="mt-3 text-slate-700">
-                To be the most trusted AI automation partner for companies seeking seamless workflow solutions.
-              </p>
+            <div className="rounded-lg border border-gray-200 bg-white p-6">
+              <h2 className="text-xl font-semibold text-slate-900">Our Vision</h2>
+              <p className="mt-2 text-sm text-slate-700">Be the most trusted partner for AI automation services and business process automation.</p>
             </div>
 
-            <div>
-              <h2 className="text-2xl font-semibold text-slate-900">Our Approach</h2>
-              <p className="mt-3 text-slate-700">
-                Combining advanced AI technology with industry expertise to deliver automated solutions that feel natural.
-              </p>
+            <div className="rounded-lg border border-gray-200 bg-white p-6">
+              <h2 className="text-xl font-semibold text-slate-900">Our Approach</h2>
+              <p className="mt-2 text-sm text-slate-700">We combine domain expertise with modern AI stacks to deliver automation that feels natural and drives ROI.</p>
+            </div>
+
+            <div className="rounded-lg border border-gray-200 bg-white p-6">
+              <h2 className="text-xl font-semibold text-slate-900">Industries We Automate</h2>
+              <p className="mt-2 text-sm text-slate-700">Real estate (lead capture, follow‑ups, reporting), healthcare (intake, reminders, compliance), and e‑commerce (catalog ops, abandoned cart, support). SEO automation across all.</p>
             </div>
           </section>
         </Container>
