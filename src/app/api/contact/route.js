@@ -15,13 +15,15 @@ export async function POST(request) {
 
     const RESEND_API_KEY = process.env.RESEND_API_KEY
     const EMAIL_FROM = process.env.EMAIL_FROM
-    const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL
+    const CONTACT_TO_EMAIL_ENV = process.env.CONTACT_TO_EMAIL
 
-    if (!RESEND_API_KEY || !EMAIL_FROM || !CONTACT_TO_EMAIL) {
+    // Fallback: if CONTACT_TO_EMAIL is not set, send to EMAIL_FROM
+    const CONTACT_TO = CONTACT_TO_EMAIL_ENV || EMAIL_FROM
+
+    if (!RESEND_API_KEY || !EMAIL_FROM) {
       const missing = []
       if (!RESEND_API_KEY) missing.push('RESEND_API_KEY')
       if (!EMAIL_FROM) missing.push('EMAIL_FROM')
-      if (!CONTACT_TO_EMAIL) missing.push('CONTACT_TO_EMAIL')
       return NextResponse.json(
         { error: 'Server email configuration missing', missing },
         { status: 500 }
@@ -50,7 +52,7 @@ export async function POST(request) {
       },
       body: JSON.stringify({
         from: EMAIL_FROM,
-        to: [CONTACT_TO_EMAIL],
+        to: [CONTACT_TO],
         subject,
         html,
         text,
