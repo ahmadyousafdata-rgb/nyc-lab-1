@@ -13,9 +13,9 @@ export function Hero() {
   const videoHref = process.env.NEXT_PUBLIC_AI_CALLING_VIDEO_URL || '/videos/ai-calling-agent'
   return (
     <Container className="pt-20 pb-16 text-center lg:pt-32">
-      <h1 className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
+      <h1 className="mx-auto max-w-4xl font-display text-4xl font-medium tracking-tight text-slate-900 sm:text-6xl lg:text-7xl">
         AI-Powered{' '}
-        <span className="relative whitespace-nowrap text-blue-600">
+        <span className="relative sm:whitespace-nowrap text-blue-600">
           <svg
             aria-hidden="true"
             viewBox="0 0 418 42"
