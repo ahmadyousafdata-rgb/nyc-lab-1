@@ -31,6 +31,13 @@ export async function POST(request) {
     }
 
     const subject = 'New consultation request from register page'
+    // Build a dynamic From name for internal notification using submitter's first name.
+    // Keeps the verified sender address from EMAIL_FROM.
+    const fromAddressMatch = EMAIL_FROM && EMAIL_FROM.match(/<([^>]+)>/)
+    const fromAddress = fromAddressMatch ? fromAddressMatch[1] : EMAIL_FROM
+    const internalFrom = firstName
+      ? `${firstName} <${fromAddress}>`
+      : EMAIL_FROM
     const html = `
       <div>
         <h2>New Consultation Request</h2>
@@ -51,7 +58,7 @@ export async function POST(request) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: EMAIL_FROM,
+        from: internalFrom,
         to: [CONTACT_TO],
         subject,
         html,
