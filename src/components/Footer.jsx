@@ -39,8 +39,8 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Footer Nav (mirror header) */}
-          <nav className="text-sm" aria-label="footer">
+          {/* Footer Nav (mirror header) — hidden on mobile */}
+          <nav className="hidden md:block text-sm" aria-label="footer">
             <div className="flex flex-col items-center md:items-start gap-2">
               <NavLink href="/">Home</NavLink>
               <NavLink href="/about">About</NavLink>
@@ -59,7 +59,7 @@ export function Footer() {
                   <path d="M13.3174 10.7749L19.1457 4H17.7646L12.7039 9.88256L8.66193 4H4L10.1122 12.8955L4 20H5.38119L10.7254 13.7878L14.994 20H19.656L13.3171 10.7749H13.3174ZM11.4257 12.9738L10.8064 12.0881L5.87886 5.03974H8.00029L11.9769 10.728L12.5962 11.6137L17.7652 19.0075H15.6438L11.4257 12.9742V12.9738Z" />
                 </svg>
               </Link>
-              <Link href="https://www.linkedin.com/company/nyxlabai" target="_blank" rel="noopener noreferrer" className="group" aria-label="nyx Lab on LinkedIn">
+              <Link href="https://www.linkedin.com/company/nyxlab-ai/" target="_blank" rel="noopener noreferrer" className="group" aria-label="nyx Lab on LinkedIn">
                 <svg className="h-6 w-6 fill-slate-500 group-hover:fill-slate-700" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.1c.7-1.3 2.4-2.7 4.9-2.7 5.2 0 6.2 3.4 6.2 7.8V24h-5V16.4c0-1.8 0-4.2-2.6-4.2-2.6 0-3 2-3 4.1V24h-5V8z" />
                 </svg>
