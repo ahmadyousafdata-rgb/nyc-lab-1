@@ -1,5 +1,12 @@
 # Changelog
 
+## 2025-09-06
+
+- UI polish: improved Primary Features selection (mobile/desktop), added “Explore” guides, spacing and contrast tweaks
+- Secondary Features: refactored to AI workflow grid, consistent fonts and colors
+- Headings: standardized to `font-display` across pages
+- About: aligned colors to site theme (blue/slate)
+
 ## 2025-07-29
 
 - Update to React 19 and Next.js 15.4
