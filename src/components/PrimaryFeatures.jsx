@@ -73,7 +73,7 @@ export function PrimaryFeatures() {
       />
       <Container className="relative">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
-          <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
+          <h2 className="font-display text-2xl tracking-tight text-white sm:text-4xl md:text-5xl">
             AI Assistant Applications
           </h2>
           <p className="mt-6 text-lg tracking-tight text-blue-100">
@@ -81,29 +81,59 @@ export function PrimaryFeatures() {
           </p>
         </div>
         <TabGroup
-          className="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:pt-0"
+          className="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:gap-x-10 xl:gap-x-12 lg:pt-0"
           vertical={tabOrientation === 'vertical'}
         >
           {({ selectedIndex }) => (
             <>
-              <div className="-mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5">
-                <TabList className="relative z-10 flex gap-x-4 px-4 whitespace-nowrap sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
+              {/* Mobile guide header to encourage exploring remaining features */}
+              <div className="lg:hidden px-4 sm:px-0 mb-4">
+                <div className="mb-2 flex items-center justify-between text-xs text-blue-100">
+                  <span className="font-medium text-white">Explore more</span>
+                  <span>
+                    {selectedIndex + 1} / {features.length}
+                  </span>
+                </div>
+                <div className="relative h-1 w-full overflow-hidden rounded-full bg-white/10">
+                  <span
+                    className="absolute left-0 top-0 h-full bg-white/60 transition-all duration-300"
+                    style={{ width: `${((selectedIndex + 1) / features.length) * 100}%` }}
+                  />
+                </div>
+              </div>
+              <div className="-mx-4 flex overflow-x-auto pb-6 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                <TabList className="relative z-10 flex gap-x-3 px-4 whitespace-nowrap sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
+                  {/* Desktop guide header */}
+                  <div className="hidden lg:block mb-3">
+                    <div className="flex items-center justify-between text-xs text-blue-100">
+                      <span className="font-medium text-white">Explore features</span>
+                      <span>
+                        {selectedIndex + 1} / {features.length}
+                      </span>
+                    </div>
+                    <div className="relative mt-1 h-1 w-full overflow-hidden rounded-full bg-white/10">
+                      <span
+                        className="absolute left-0 top-0 h-full bg-white/60 transition-all duration-300"
+                        style={{ width: `${((selectedIndex + 1) / features.length) * 100}%` }}
+                      />
+                    </div>
+                  </div>
                   {features.map((feature, featureIndex) => (
                     <div
                       key={feature.title}
                       className={clsx(
-                        'group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6',
+                        'group relative rounded-full px-4 py-3 sm:px-3 sm:py-2 transition-colors duration-200 snap-start lg:rounded-l-xl lg:rounded-r-none lg:p-6',
                         selectedIndex === featureIndex
-                          ? 'bg-white lg:bg-white/10 lg:ring-1 lg:ring-white/10 lg:ring-inset'
-                          : 'hover:bg-white/10 lg:hover:bg-white/5',
+                          ? 'bg-white/10 border border-white/20 lg:bg-white/10 lg:ring-1 lg:ring-white/10 lg:border-0 lg:border-l-4 lg:border-white/70'
+                          : 'border border-transparent hover:bg-white/10 lg:hover:bg-white/5',
                       )}
                     >
                       <h3>
                         <Tab
                           className={clsx(
-                            'font-display text-lg data-selected:not-data-focus:outline-hidden',
+                            'font-display text-lg data-selected:not-data-focus:outline-hidden transition-colors duration-200',
                             selectedIndex === featureIndex
-                              ? 'text-blue-600 lg:text-white'
+                              ? 'text-white font-semibold'
                               : 'text-blue-100 hover:text-white lg:text-white',
                           )}
                         >
@@ -127,14 +157,13 @@ export function PrimaryFeatures() {
               </div>
               <TabPanels className="lg:col-span-7">
                 {features.map((feature) => (
-                  <TabPanel key={feature.title} unmount={false}>
-                    <div className="relative sm:px-6 lg:hidden">
-                      <div className="absolute -inset-x-4 -top-26 -bottom-17 bg-white/10 ring-1 ring-white/10 ring-inset sm:inset-x-0 sm:rounded-t-xl" />
-                      <p className="relative mx-auto max-w-2xl text-base text-white sm:text-center">
+                  <TabPanel key={feature.title} unmount={false} className="group">
+                    <div className="relative mt-2 px-4 sm:px-6 lg:hidden">
+                      <p className="relative mx-auto max-w-2xl text-base text-white/90 sm:text-center">
                         {feature.description}
                       </p>
                     </div>
-                    <div className="mt-10 w-180 overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-271.25">
+                    <div className="relative z-10 mt-10 w-180 overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 transition-transform duration-300 group-data-[selected]:scale-[1.01] lg:group-data-[selected]:scale-[1.02] group-data-[selected]:shadow-2xl sm:w-auto lg:mt-0 lg:w-271.25">
                       <Image
                         className="w-full"
                         src={feature.image}

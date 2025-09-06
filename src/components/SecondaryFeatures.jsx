@@ -1,235 +1,143 @@
-'use client'
-
-import { useId } from 'react'
-import Image from 'next/image'
-import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
-import clsx from 'clsx'
+"use client"
 
 import { Container } from '@/components/Container'
-import screenshotContacts from '@/images/screenshots/contacts.png'
-import screenshotInventory from '@/images/screenshots/inventory.png'
-import screenshotProfitLoss from '@/images/screenshots/profit-loss.png'
+
+function SparkIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
+      <path d="M12 3v4M12 17v4M4.93 6.34l2.83 2.83M16.24 15.17l2.83 2.83M3 12h4M17 12h4M6.34 19.07l2.83-2.83M15.17 7.76l2.83-2.83" strokeLinecap="round"/>
+    </svg>
+  )
+}
+
+function ChatIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
+      <path d="M7 8h10M7 12h6" strokeLinecap="round"/>
+      <path d="M5 5h14a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-6l-4 3v-3H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/>
+    </svg>
+  )
+}
+
+function CalendarIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
+      <path d="M7 3v3M17 3v3" strokeLinecap="round"/>
+      <rect x="4" y="6" width="16" height="14" rx="2"/>
+      <path d="M6 10h12"/>
+    </svg>
+  )
+}
+
+function PuzzleIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
+      <path d="M9 3h3a2 2 0 1 1-2 2v2H7a2 2 0 0 0-2 2v2h2a2 2 0 1 1 2 2h2v2a2 2 0 0 0 2 2h2v-2a2 2 0 1 1 2-2h2V9a2 2 0 0 0-2-2h-2V5a2 2 0 0 0-2-2h-2" strokeLinejoin="round"/>
+    </svg>
+  )
+}
+
+function ShieldIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
+      <path d="M12 3 5 6v6c0 4.97 3.58 7.69 7 9 3.42-1.31 7-4.03 7-9V6l-7-3Z"/>
+      <path d="M9 12l2 2 4-4" strokeLinecap="round"/>
+    </svg>
+  )
+}
+
+function ChartIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
+      <path d="M4 19h16M7 16v-6M12 16V8M17 16v-4" strokeLinecap="round"/>
+    </svg>
+  )
+}
 
 const features = [
   {
-   name: 'Smart Lead Qualification',
-    summary:
-      'Nyx Lab’s AI Agents ',
+    name: 'Smart Lead Qualification',
     description:
-      'instantly filters prospects by budget, intent, and location—so your team spends time only on leads that are ready to convert.',
-    
-    image: screenshotProfitLoss,
-    icon: function ReportingIcon() {
-      let id = useId()
-      return (
-        <>
-          <defs>
-            <linearGradient
-              id={id}
-              x1="11.5"
-              y1={18}
-              x2={36}
-              y2="15.5"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop offset=".194" stopColor="#fff" />
-              <stop offset={1} stopColor="#6692F1" />
-            </linearGradient>
-          </defs>
-          <path
-            d="m30 15-4 5-4-11-4 18-4-11-4 7-4-5"
-            stroke={`url(#${id})`}
-            strokeWidth={2}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </>
-      )
-    },
+      'Score and route leads by intent, budget, and location so reps focus on the highest‑probability conversations.',
+    icon: SparkIcon,
   },
   {
-    name: 'Automated Scheduling & Handoff',
-    summary:
-      'Back-and-forth of booking.',
+    name: 'Omnichannel Engagement',
     description:
-      'We handle the back-and-forth of booking, then pass agents a ready-to-meet client with all the key details summarized.',
-    
-    image: screenshotInventory,
-    icon: function InventoryIcon() {
-      return (
-        <>
-          <path
-            opacity=".5"
-            d="M8 17a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-            fill="#fff"
-          />
-          <path
-            opacity=".3"
-            d="M8 24a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-            fill="#fff"
-          />
-          <path
-            d="M8 10a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-            fill="#fff"
-          />
-        </>
-      )
-    },
+      'Consistent follow‑ups across WhatsApp, SMS, email, and voice with brand‑tuned messaging and timing.',
+    icon: ChatIcon,
   },
   {
-   name: 'Multi-Channel Engagement',
-    summary: 'Email to WhatsApp to iMessage',
+    name: 'Scheduling & Handoff',
     description:
-      'Our technology nurtures leads across every channel, keeping conversations warm and consistent.',
-    
-    image: screenshotContacts,
-    icon: function ContactsIcon() {
-      return (
-        <>
-          <path
-            opacity=".5"
-            d="M25.778 25.778c.39.39 1.027.393 1.384-.028A11.952 11.952 0 0 0 30 18c0-6.627-5.373-12-12-12S6 11.373 6 18c0 2.954 1.067 5.659 2.838 7.75.357.421.993.419 1.384.028.39-.39.386-1.02.036-1.448A9.959 9.959 0 0 1 8 18c0-5.523 4.477-10 10-10s10 4.477 10 10a9.959 9.959 0 0 1-2.258 6.33c-.35.427-.354 1.058.036 1.448Z"
-            fill="#fff"
-          />
-          <path
-            d="M12 28.395V28a6 6 0 0 1 12 0v.395A11.945 11.945 0 0 1 18 30c-2.186 0-4.235-.584-6-1.605ZM21 16.5c0-1.933-.5-3.5-3-3.5s-3 1.567-3 3.5 1.343 3.5 3 3.5 3-1.567 3-3.5Z"
-            fill="#fff"
-          />
-        </>
-      )
-    },
+      'Auto‑book calendar slots, send reminders, and hand off qualified leads with concise summaries.',
+    icon: CalendarIcon,
+  },
+  {
+    name: 'CRM Sync & Workflows',
+    description:
+      'Update CRM fields, trigger workflows, and create tasks across your existing stack.',
+    icon: PuzzleIcon,
+  },
+  {
+    name: 'Analytics & Reporting',
+    description:
+      'Track conversion, response time, and ROI with ready‑to‑share reports.',
+    icon: ChartIcon,
+  },
+  {
+    name: 'Security & Compliance',
+    description:
+      'PII‑safe logging, data minimization, and role‑based access baked in.',
+    icon: ShieldIcon,
   },
 ]
-
-function Feature({ feature, isActive, className, ...props }) {
-  return (
-    <div
-      className={clsx(className, !isActive && 'opacity-75 hover:opacity-100')}
-      {...props}
-    >
-      <div
-        className={clsx(
-          'w-9 rounded-lg',
-          isActive ? 'bg-blue-600' : 'bg-slate-500',
-        )}
-      >
-        <svg aria-hidden="true" className="h-9 w-9" fill="none">
-          <feature.icon />
-        </svg>
-      </div>
-      <h3
-        className={clsx(
-          'mt-6 text-sm font-medium',
-          isActive ? 'text-blue-600' : 'text-slate-600',
-        )}
-      >
-        {feature.name}
-      </h3>
-      <p className="mt-2 font-display text-xl text-slate-900">
-        {feature.summary}
-      </p>
-      <p className="mt-4 text-sm text-slate-600">{feature.description}</p>
-    </div>
-  )
-}
-
-function FeaturesMobile() {
-  return (
-    <div className="-mx-4 mt-20 flex flex-col gap-y-10 overflow-hidden px-4 sm:-mx-6 sm:px-6 lg:hidden">
-      {features.map((feature) => (
-        <div key={feature.summary}>
-          <Feature feature={feature} className="mx-auto max-w-2xl" isActive />
-          <div className="relative mt-10 pb-10">
-            <div className="absolute -inset-x-4 top-8 bottom-0 bg-slate-200 sm:-inset-x-6" />
-            <div className="relative mx-auto w-211 overflow-hidden rounded-2xl bg-white shadow-lg ring-1 shadow-slate-900/5 ring-slate-500/10">
-              <Image
-                className="w-full"
-                src={feature.image}
-                alt=""
-                sizes="52.75rem"
-              />
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  )
-}
-
-function FeaturesDesktop() {
-  return (
-    <TabGroup className="hidden lg:mt-20 lg:block">
-      {({ selectedIndex }) => (
-        <>
-          <TabList className="grid grid-cols-3 gap-x-8">
-            {features.map((feature, featureIndex) => (
-              <Feature
-                key={feature.summary}
-                feature={{
-                  ...feature,
-                  name: (
-                    <Tab className="data-selected:not-data-focus:outline-hidden">
-                      <span className="absolute inset-0" />
-                      {feature.name}
-                    </Tab>
-                  ),
-                }}
-                isActive={featureIndex === selectedIndex}
-                className="relative"
-              />
-            ))}
-          </TabList>
-          <TabPanels className="relative mt-20 overflow-hidden rounded-4xl bg-slate-200 px-14 py-16 xl:px-16">
-            <div className="-mx-5 flex">
-              {features.map((feature, featureIndex) => (
-                <TabPanel
-                  static
-                  key={feature.summary}
-                  className={clsx(
-                    'px-5 transition duration-500 ease-in-out data-selected:not-data-focus:outline-hidden',
-                    featureIndex !== selectedIndex && 'opacity-60',
-                  )}
-                  style={{ transform: `translateX(-${selectedIndex * 100}%)` }}
-                  aria-hidden={featureIndex !== selectedIndex}
-                >
-                  <div className="w-211 overflow-hidden rounded-2xl bg-white shadow-lg ring-1 shadow-slate-900/5 ring-slate-500/10">
-                    <Image
-                      className="w-full"
-                      src={feature.image}
-                      alt=""
-                      sizes="52.75rem"
-                    />
-                  </div>
-                </TabPanel>
-              ))}
-            </div>
-            <div className="pointer-events-none absolute inset-0 rounded-4xl ring-1 ring-slate-900/10 ring-inset" />
-          </TabPanels>
-        </>
-      )}
-    </TabGroup>
-  )
-}
 
 export function SecondaryFeatures() {
   return (
     <section
       id="secondary-features"
-      aria-label="Features for simplifying everyday business tasks"
+      aria-label="AI automation for workflows"
       className="pt-20 pb-14 sm:pt-32 sm:pb-20 lg:pb-32"
     >
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            How Our Technology Works.
+            Automate the busywork. Scale what matters.
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            Nyx Lab combines proprietary AI technology with proven lead conversion strategies, 
-            allowing us to deliver automated solutions that feel personal and authentic.
+            Nyx Lab deploys AI agents that qualify, nurture, schedule, and update your systems — so your team closes more with less effort.
           </p>
         </div>
-        <FeaturesMobile />
-        <FeaturesDesktop />
+
+        <div className="mx-auto mt-12 max-w-5xl">
+          <div className="grid grid-cols-1 gap-2 sm:gap-3 lg:gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {features.map((item) => (
+              <div key={item.name} className="group relative flex gap-x-4 rounded-lg p-4 hover:bg-slate-50">
+                <div className="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-slate-100 group-hover:bg-white">
+                  <item.icon aria-hidden="true" className="h-6 w-6 text-slate-600 transition-colors duration-200 group-hover:text-blue-600" />
+                </div>
+                <div>
+                  <div className="font-display text-lg font-medium tracking-tight text-slate-900 transition-colors duration-200 group-hover:text-blue-600">
+                    {item.name}
+                    <span className="absolute inset-0" />
+                  </div>
+                  <p className="mt-1 text-sm text-slate-600">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 rounded-3xl bg-slate-50 px-6 py-5">
+            <div className="flex items-center gap-x-3">
+              <h3 className="font-display text-sm font-semibold text-slate-900">Enterprise</h3>
+              <p className="rounded-full bg-blue-600/10 px-2.5 py-1 text-xs font-semibold text-blue-600">New</p>
+            </div>
+            <p className="mt-2 text-sm text-slate-600">
+              Bring your own tools and data. We integrate with your CRM, helpdesk, and calendars to automate full‑funnel workflows.
+            </p>
+          </div>
+        </div>
       </Container>
     </section>
   )

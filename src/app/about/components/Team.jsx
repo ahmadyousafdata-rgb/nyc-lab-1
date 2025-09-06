@@ -54,7 +54,7 @@ export default function Team() {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
         <div className="mx-auto max-w-2xl">
-          <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+          <h2 className="font-display text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
             Meet our team
           </h2>
           <p className="mt-6 text-lg text-gray-600">
@@ -73,7 +73,7 @@ export default function Team() {
                 src={person.imageUrl}
                 className="mx-auto size-48 rounded-full outline-1 -outline-offset-1 outline-black/5 md:size-56"
               />
-              <h3 className="mt-6 text-base font-semibold text-gray-900">{person.name}</h3>
+              <h3 className="font-display mt-6 text-base font-semibold text-gray-900">{person.name}</h3>
               <p className="text-sm text-gray-600">{person.role}</p>
               <ul role="list" className="mt-6 flex justify-center gap-x-6">
                 <li>

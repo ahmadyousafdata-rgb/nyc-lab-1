@@ -17,7 +17,7 @@ export default function Register() {
           <Logo className="h-10 w-auto" />
         </Link>
       </div>
-      <h2 className="mt-12 text-lg font-semibold text-gray-900">Request a Consultation</h2>
+      <h2 className="font-display mt-12 text-lg font-semibold text-gray-900">Request a Consultation</h2>
       <p className="mt-1 text-sm text-gray-700">Share a few details and we’ll be in touch shortly.</p>
       <form action="/api/contact" method="POST" className="mt-8 grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2">
         <TextField label="First name" name="first_name" type="text" autoComplete="given-name" required />

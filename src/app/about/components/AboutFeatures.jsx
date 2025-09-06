@@ -2,8 +2,8 @@ export default function AboutFeatures() {
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="text-base/7 font-semibold text-indigo-600">Automate workflows. Grow faster.</h2>
-        <p className="mt-2 max-w-lg text-4xl font-semibold tracking-tight text-pretty text-gray-950 sm:text-5xl">
+        <h2 className="font-display text-base/7 font-semibold text-blue-600">Automate workflows. Grow faster.</h2>
+        <p className="font-display mt-2 max-w-lg text-4xl font-semibold tracking-tight text-pretty text-slate-900 sm:text-5xl">
           AI automation that saves time and drives growth
         </p>
         <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
@@ -17,8 +17,8 @@ export default function AboutFeatures() {
                 className="h-80 object-cover object-left"
               />
               <div className="p-10 pt-4">
-                <h3 className="text-sm font-semibold text-indigo-600">AI Agents</h3>
-                <p className="mt-2 text-lg font-medium text-gray-950">24/7 lead capture and follow‑ups</p>
+                <h3 className="font-display text-sm font-semibold text-blue-600">AI Agents</h3>
+                <p className="font-display mt-2 text-lg font-medium text-slate-900">24/7 lead capture and follow‑ups</p>
                 <p className="mt-2 text-sm text-gray-600">Custom agents for lead intake, qualification, reminders, and support. Reduce response times and never miss an opportunity.</p>
               </div>
             </div>
@@ -33,8 +33,8 @@ export default function AboutFeatures() {
                 className="h-80 object-cover object-left lg:object-right"
               />
               <div className="p-10 pt-4">
-                <h3 className="text-sm font-semibold text-indigo-600">Workflow Automation</h3>
-                <p className="mt-2 text-lg font-medium text-gray-950">From CRM to billing</p>
+                <h3 className="font-display text-sm font-semibold text-blue-600">Workflow Automation</h3>
+                <p className="font-display mt-2 text-lg font-medium text-slate-900">From CRM to billing</p>
                 <p className="mt-2 text-sm text-gray-600">Automate multi‑step processes end‑to‑end: CRM updates, proposals, invoicing, and analytics. Less manual work, more throughput.</p>
               </div>
             </div>
@@ -49,8 +49,8 @@ export default function AboutFeatures() {
                 className="h-80 object-cover object-left"
               />
               <div className="p-10 pt-4">
-                <h3 className="text-sm font-semibold text-indigo-600">Industry Solutions</h3>
-                <p className="mt-2 text-lg font-medium text-gray-950">Real estate, healthcare, e‑commerce</p>
+                <h3 className="font-display text-sm font-semibold text-blue-600">Industry Solutions</h3>
+                <p className="font-display mt-2 text-lg font-medium text-slate-900">Real estate, healthcare, e‑commerce</p>
                 <p className="mt-2 text-sm text-gray-600">Proven automations for investor pipelines, patient intake and reminders, catalog ops and abandoned carts.</p>
               </div>
             </div>
@@ -65,8 +65,8 @@ export default function AboutFeatures() {
                 className="h-80 object-cover"
               />
               <div className="p-10 pt-4">
-                <h3 className="text-sm font-semibold text-indigo-600">Integrations</h3>
-                <p className="mt-2 text-lg font-medium text-gray-950">Plug into your stack</p>
+                <h3 className="font-display text-sm font-semibold text-blue-600">Integrations</h3>
+                <p className="font-display mt-2 text-lg font-medium text-slate-900">Plug into your stack</p>
                 <p className="mt-2 text-sm text-gray-600">Connect CRMs, EHRs, e‑commerce platforms, and data warehouses. Reliable, secure, compliant.</p>
               </div>
             </div>
@@ -81,8 +81,8 @@ export default function AboutFeatures() {
                 className="h-80 object-cover"
               />
               <div className="p-10 pt-4">
-                <h3 className="text-sm font-semibold text-indigo-600">SEO Automation</h3>
-                <p className="mt-2 text-lg font-medium text-gray-950">Content ops at scale</p>
+                <h3 className="font-display text-sm font-semibold text-blue-600">SEO Automation</h3>
+                <p className="font-display mt-2 text-lg font-medium text-slate-900">Content ops at scale</p>
                 <p className="mt-2 text-sm text-gray-600">Automate briefs, clustering, internal links, and updates to drive organic growth without sacrificing quality.</p>
               </div>
             </div>

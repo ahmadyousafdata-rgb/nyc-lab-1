@@ -88,7 +88,7 @@ export default function BlogPage() {
                   {post.category.title}
                 </a>
               </div>
-              <h2 className="mt-3 text-2xl font-semibold text-slate-900">{post.title}</h2>
+              <h2 className="font-display mt-3 text-2xl font-semibold text-slate-900">{post.title}</h2>
               <p className="mt-3 text-slate-700">{post.summary}</p>
               <div className="relative mt-8 flex items-center gap-x-4">
                 <img alt="" src={post.author.imageUrl} className="h-10 w-10 rounded-full bg-gray-50" />

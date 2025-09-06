@@ -107,7 +107,7 @@ export function Pricing() {
                   {tier.eyebrow}
                 </div>
               )}
-              <h3 id={tier.id} className="mt-2 text-2xl font-semibold tracking-tight text-gray-900">
+              <h3 id={tier.id} className="font-display mt-2 text-2xl font-semibold tracking-tight text-gray-900">
                 {tier.name}
               </h3>
               <ul role="list" className="mt-8 space-y-2 text-sm/6 text-gray-600 sm:mt-10">

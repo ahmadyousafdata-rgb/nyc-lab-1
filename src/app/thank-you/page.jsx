@@ -16,7 +16,7 @@ export default function ThankYou() {
           <Logo className="h-10 w-auto" />
         </Link>
       </div>
-      <h2 className="mt-20 text-lg font-semibold text-gray-900">
+      <h2 className="font-display mt-20 text-lg font-semibold text-gray-900">
         Thanks for reaching out!
       </h2>
       <p className="mt-2 text-sm text-gray-700">
@@ -30,4 +30,3 @@ export default function ThankYou() {
     </SlimLayout>
   )
 }
-

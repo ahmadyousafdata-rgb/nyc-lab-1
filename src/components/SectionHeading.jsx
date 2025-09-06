@@ -6,10 +6,10 @@ export default function SectionHeading({ eyebrow, title, description, align = 'c
   return (
     <div className={clsx('mx-auto max-w-2xl', alignClass, className)}>
       {eyebrow && (
-        <h2 className="text-base/7 font-semibold text-indigo-600">{eyebrow}</h2>
+        <h2 className="font-display text-base/7 font-semibold text-blue-600">{eyebrow}</h2>
       )}
       {title && (
-        <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-950 sm:text-5xl">
+        <p className="font-display mt-2 text-4xl font-semibold tracking-tight text-pretty text-slate-900 sm:text-5xl">
           {title}
         </p>
       )}
@@ -19,4 +19,3 @@ export default function SectionHeading({ eyebrow, title, description, align = 'c
     </div>
   )
 }
-
