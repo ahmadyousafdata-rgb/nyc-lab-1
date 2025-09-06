@@ -7,39 +7,45 @@ const posts = [
     id: 1,
     title: 'Maximizing Lead Conversion with AI',
     date: 'August 2025',
-    summary: 'Learn how AI agents help businesses manage follow-ups and close deals faster.',
+    summary:
+      'How AI agents auto‑qualify leads, orchestrate follow‑ups across SMS/email, and auto‑schedule meetings — lifting conversions 20–40% for small sales teams.',
     category: { title: 'Sales', href: '#' },
     author: {
-      name: 'Michael Foster',
-      role: 'Co-Founder / CTO',
+      name: 'Avery Khan',
+      role: 'AI Automation Lead, nyx Lab',
       href: '#',
-      imageUrl: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      imageUrl:
+        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
   },
   {
     id: 2,
     title: 'Automating Healthcare Workflows',
     date: 'July 2025',
-    summary: 'Discover how AI-powered automation reduces errors and improves patient engagement.',
+    summary:
+      'From digital intake to reminder flows, AI reduces admin burden and no‑shows while keeping PHI secure — improving patient engagement and staff capacity.',
     category: { title: 'Healthcare', href: '#' },
     author: {
-      name: 'Lindsay Walton',
-      role: 'Front-end Developer',
+      name: 'Dr. Maya Patel',
+      role: 'Healthcare Automation Advisor',
       href: '#',
-      imageUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      imageUrl:
+        'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
   },
   {
     id: 3,
     title: 'E-Commerce Efficiency with AI',
     date: 'June 2025',
-    summary: 'Boost your e-commerce operations with intelligent AI agents and workflow automation.',
+    summary:
+      'AI agents handle pre‑sale questions, recover abandoned carts, and automate returns — driving higher AOV and faster support without adding headcount.',
     category: { title: 'E-Commerce', href: '#' },
     author: {
-      name: 'Tom Cook',
-      role: 'Director of Product',
+      name: 'Jordan Lee',
+      role: 'E‑commerce Automation Strategist',
       href: '#',
-      imageUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      imageUrl:
+        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
   },
 ]
