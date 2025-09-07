@@ -94,7 +94,7 @@ export function PrimaryFeatures() {
                   />
                 </div>
               </div>
-              <div className="-mx-4 flex overflow-x-auto pb-6 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+              <div className="-mx-4 flex overflow-x-auto pb-6 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5 xl:col-span-4 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
                 <TabList className="relative z-10 flex gap-x-3 px-4 whitespace-nowrap sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
                   {/* Desktop guide header */}
                   <div className="hidden lg:block mb-3">
@@ -148,7 +148,7 @@ export function PrimaryFeatures() {
                   ))}
                 </TabList>
               </div>
-              <TabPanels className="lg:col-span-7">
+              <TabPanels className="lg:col-span-7 lg:hidden">
                 {features.map((feature) => (
                   <TabPanel key={feature.title} unmount={false} className="group">
                     <div className="relative mt-2 px-4 sm:px-6 lg:hidden">
@@ -161,13 +161,18 @@ export function PrimaryFeatures() {
                   </TabPanel>
                 ))}
               </TabPanels>
+              {/* Right-side dashboard on desktop; stacked on mobile */}
+              <div className="mt-8 px-4 sm:px-6 lg:mt-0 lg:col-span-7 xl:col-span-8">
+                {/* Mobile label for clarity */}
+                <p className="mb-3 text-sm font-medium text-white/80 lg:hidden">Live dashboard</p>
+                <div className="overflow-hidden rounded-xl bg-white shadow-lg ring-1 ring-slate-900/10 sm:shadow-xl sm:shadow-blue-900/20">
+                  <DashboardPreview />
+                </div>
+              </div>
             </>
           )}
         </TabGroup>
-        {/* One shared dashboard for all features */}
-        <div className="relative z-10 mt-10 overflow-hidden rounded-xl bg-white shadow-xl shadow-blue-900/20">
-          <DashboardPreview />
-        </div>
+        {/* Dashboard is placed to the right on desktop via grid above */}
       </Container>
     </section>
   )

@@ -17,9 +17,9 @@ function MonogramIcon(props) {
 
 function BrowserWindow({ children }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl">
-      {/* Browser chrome */}
-      <div className="flex items-center gap-3 border-b border-slate-200 bg-slate-50 px-3 py-2">
+    <div className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-lg sm:shadow-xl aspect-[16/10] min-h-[360px] sm:min-h-[420px] lg:min-h-[540px] flex flex-col">
+      {/* Browser chrome (desktop-like) */}
+      <div className="flex items-center gap-3 border-b border-slate-200 bg-slate-50 px-2 py-1.5 sm:px-3 sm:py-2">
         {/* Traffic lights */}
         <div className="flex items-center gap-1.5">
           <span className="inline-flex h-2.5 w-2.5 rounded-full bg-red-500 ring-1 ring-black/10" />
@@ -28,11 +28,11 @@ function BrowserWindow({ children }) {
         </div>
         {/* Address bar */}
         <div className="flex-1">
-          <div className="mx-auto flex max-w-md items-center gap-2 rounded-full border border-slate-200 bg-white/90 px-3 py-1.5 text-xs text-slate-600 shadow-sm">
+          <div className="mx-auto flex max-w-[80%] items-center gap-2 rounded-full border border-slate-200 bg-white/90 px-2.5 py-1.5 text-[11px] text-slate-600 shadow-sm sm:max-w-md sm:px-3 sm:text-xs">
             <span className="inline-flex items-center justify-center">
-              <MonogramIcon className="h-4 w-4" />
+              <MonogramIcon className="h-3 w-3 sm:h-4 sm:w-4" />
             </span>
-            <span className="truncate">nyxlab.ai — Live Automation Dashboard</span>
+            <span className="truncate">https://nyxlab.ai/live</span>
           </div>
         </div>
         {/* Placeholder actions */}
@@ -41,7 +41,10 @@ function BrowserWindow({ children }) {
           <span className="h-2.5 w-2.5 rounded bg-slate-200" />
         </div>
       </div>
-      {children}
+      {/* Content area fills remaining height; avoid horizontal scroll and fit width */}
+      <div className="flex-1 overflow-y-auto overflow-x-hidden">
+        <div className="mx-auto w-full">{children}</div>
+      </div>
     </div>
   )
 }
@@ -57,8 +60,39 @@ export default function DashboardPreview() {
 
   return (
     <BrowserWindow>
-      <div className="w-full bg-white">
-        <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-3 sm:p-6">
+      <div className="flex w-full bg-white">
+        {/* Sidebar */}
+        <aside className="hidden sm:block w-52 shrink-0 border-r border-slate-200 bg-slate-50/60 p-3">
+          <div className="flex items-center gap-2 px-1">
+            <MonogramIcon className="h-5 w-5" />
+            <span className="text-sm font-semibold text-slate-800">nyx Lab</span>
+          </div>
+          <nav className="mt-4 space-y-1 text-sm">
+            {[
+              { label: 'Overview', active: true },
+              { label: 'Leads' },
+              { label: 'Automations' },
+              { label: 'Channels' },
+              { label: 'Reports' },
+              { label: 'Settings' },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className={
+                  'cursor-default rounded-md px-3 py-2 ' +
+                  (item.active
+                    ? 'bg-white text-slate-900 shadow-sm ring-1 ring-inset ring-slate-200'
+                    : 'text-slate-700 hover:bg-white/70 hover:shadow-sm')
+                }
+              >
+                {item.label}
+              </div>
+            ))}
+          </nav>
+        </aside>
+        {/* Main content */}
+        <div className="min-w-0 flex-1">
+        <div className="grid grid-cols-1 gap-3 p-3 sm:grid-cols-3 sm:gap-4 sm:p-6">
           <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
             <p className="text-xs font-medium text-slate-500">Leads processed (7d)</p>
             <p className="mt-2 text-2xl font-semibold text-slate-900">1,284</p>
@@ -76,13 +110,13 @@ export default function DashboardPreview() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 p-4 pt-0 sm:grid-cols-3 sm:p-6 sm:pt-0">
+        <div className="grid grid-cols-1 gap-3 p-3 pt-0 sm:grid-cols-3 sm:gap-4 sm:p-6 sm:pt-0">
           <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:col-span-2">
             <div className="flex items-center justify-between">
               <p className="text-sm font-semibold text-slate-900">Leads by day</p>
               <span className="text-xs text-slate-500">Last 7 days</span>
             </div>
-            <div className="mt-4 flex h-28 items-end gap-2">
+            <div className="mt-4 flex h-24 items-end gap-2 sm:h-28 md:h-36">
               {bars.map((h, i) => (
                 <div
                   key={i}
@@ -122,14 +156,14 @@ export default function DashboardPreview() {
           </div>
         </div>
 
-        <div className="p-4 pt-0 sm:p-6 sm:pt-0">
-          <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="p-3 pt-0 sm:p-6 sm:pt-0">
+          <div className="rounded-xl border border-slate-200 bg-white p-3 shadow-sm sm:p-4">
             <div className="flex items-center justify-between">
               <p className="text-sm font-semibold text-slate-900">Recent leads</p>
               <span className="text-xs text-slate-500">Auto-updated</span>
             </div>
             <div className="mt-3 overflow-x-auto">
-              <table className="min-w-full text-left text-sm">
+              <table className="min-w-full text-left text-xs sm:text-sm">
                 <thead>
                   <tr className="text-slate-500">
                     <th className="pb-2 font-medium">Name</th>
@@ -155,6 +189,7 @@ export default function DashboardPreview() {
               </table>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </BrowserWindow>
