@@ -85,7 +85,7 @@ function classNames(...classes) {
 
 export function Pricing() {
   return (
-    <section id="pricing" aria-label="Packages" className="bg-white py-20 sm:py-32">
+    <section id="pricing" aria-label="Packages" className="bg-gradient-to-b from-blue-700 via-indigo-700 to-blue-800 py-20 sm:py-32">
       <Container>
         {/* Intentionally no section heading per request */}
         <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2">
@@ -103,7 +103,7 @@ export function Pricing() {
               )}
             >
               {tier.eyebrow && (
-                <div className="text-xs font-semibold uppercase tracking-wide text-blue-600">
+                <div className="text-xs font-semibold uppercase tracking-wide text-indigo-500">
                   {tier.eyebrow}
                 </div>
               )}
@@ -113,7 +113,7 @@ export function Pricing() {
               <ul role="list" className="mt-8 space-y-2 text-sm/6 text-gray-600 sm:mt-10">
                 {tier.features.map((feature) => (
                   <li key={typeof feature === 'string' ? feature : feature.title} className="flex gap-x-3">
-                    <CheckIcon aria-hidden="true" className="mt-0.5 h-6 w-5 flex-none text-blue-600" />
+                    <CheckIcon aria-hidden="true" className="mt-0.5 h-6 w-5 flex-none text-indigo-500" />
                     <span>{typeof feature === 'string' ? feature : feature.title}</span>
                   </li>
                 ))}

@@ -7,7 +7,7 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import backgroundImage from '@/images/background-features.jpg'
-import DashboardPreview from '@/components/DashboardPreview'
+// Dashboard moved to a standalone section on the homepage
 
 const features = [
   {
@@ -79,67 +79,56 @@ export function PrimaryFeatures() {
         >
           {({ selectedIndex }) => (
             <>
-              {/* Mobile guide header to encourage exploring remaining features */}
-              <div className="lg:hidden px-4 sm:px-0 mb-4">
-                <div className="mb-2 flex items-center justify-between text-xs text-blue-100">
-                  <span className="font-medium text-white">Explore more</span>
-                  <span>
+              {/* Prominent selected header + dotted guide below */}
+              <div className="px-4 sm:px-0 mb-4 lg:col-span-12">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-white">
+                    {features[selectedIndex].title}
+                  </h3>
+                  <span className="text-xs text-blue-100">
                     {selectedIndex + 1} / {features.length}
                   </span>
                 </div>
-                <div className="relative h-1 w-full overflow-hidden rounded-full bg-white/10">
-                  <span
-                    className="absolute left-0 top-0 h-full bg-white/60 transition-all duration-300"
-                    style={{ width: `${((selectedIndex + 1) / features.length) * 100}%` }}
-                  />
+                <div className="mt-2 flex items-center gap-2">
+                  {features.map((_, i) => (
+                    <span
+                      key={i}
+                      className={clsx(
+                        'h-1.5 w-1.5 rounded-full transition-colors duration-200',
+                        i === selectedIndex ? 'bg-white' : 'bg-white/40'
+                      )}
+                    />
+                  ))}
                 </div>
               </div>
-              <div className="-mx-4 flex overflow-x-auto pb-6 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5 xl:col-span-4 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-                <TabList className="relative z-10 flex gap-x-3 px-4 whitespace-nowrap sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
-                  {/* Desktop guide header */}
-                  <div className="hidden lg:block mb-3">
-                    <div className="flex items-center justify-between text-xs text-blue-100">
-                      <span className="font-medium text-white">Explore features</span>
-                      <span>
-                        {selectedIndex + 1} / {features.length}
-                      </span>
-                    </div>
-                    <div className="relative mt-1 h-1 w-full overflow-hidden rounded-full bg-white/10">
-                      <span
-                        className="absolute left-0 top-0 h-full bg-white/60 transition-all duration-300"
-                        style={{ width: `${((selectedIndex + 1) / features.length) * 100}%` }}
-                      />
-                    </div>
-                  </div>
+              {/* Mobile: horizontal swipeable cards; Desktop: full grid */}
+              <div className="-mx-4 sm:mx-0 lg:col-span-12">
+                <TabList className="relative z-10 flex gap-4 overflow-x-auto px-4 sm:px-0 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-12 lg:gap-4 lg:overflow-visible">
                   {features.map((feature, featureIndex) => (
                     <div
                       key={feature.title}
                       className={clsx(
-                        'group relative rounded-full px-4 py-3 sm:px-3 sm:py-2 transition-colors duration-200 snap-start lg:rounded-l-xl lg:rounded-r-none lg:p-6',
-                        selectedIndex === featureIndex
-                          ? 'bg-white/10 border border-white/20 lg:bg-white/10 lg:ring-1 lg:ring-white/10 lg:border-0 lg:border-l-4 lg:border-white/70'
-                          : 'border border-transparent hover:bg-white/10 lg:hover:bg-white/5',
+                        'group relative rounded-xl px-4 py-4 sm:px-5 sm:py-5 transition-colors duration-200 backdrop-blur bg-white/0 ring-1 ring-white/10 h-full snap-start min-w-[16rem] shrink-0 lg:min-w-0 lg:shrink lg:col-span-3',
+                        selectedIndex === featureIndex ? 'bg-white/10 ring-white/30' : 'hover:bg-white/10',
                       )}
                     >
                       <h3>
                         <Tab
                           className={clsx(
-                            'font-display text-lg data-selected:not-data-focus:outline-hidden transition-colors duration-200',
+                            'font-display text-base sm:text-lg data-selected:not-data-focus:outline-hidden transition-colors duration-200',
                             selectedIndex === featureIndex
                               ? 'text-white font-semibold'
                               : 'text-blue-100 hover:text-white lg:text-white',
                           )}
                         >
-                          <span className="absolute inset-0 rounded-full lg:rounded-l-xl lg:rounded-r-none" />
+                          <span className="absolute inset-0 rounded-xl" />
                           {feature.title}
                         </Tab>
                       </h3>
                       <p
                         className={clsx(
-                          'mt-2 hidden text-sm lg:block',
-                          selectedIndex === featureIndex
-                            ? 'text-white'
-                            : 'text-blue-100 group-hover:text-white',
+                          'mt-2 max-w-xl text-xs sm:text-sm text-blue-100 hidden lg:block',
+                          selectedIndex === featureIndex && 'text-white',
                         )}
                       >
                         {feature.description}
@@ -148,7 +137,8 @@ export function PrimaryFeatures() {
                   ))}
                 </TabList>
               </div>
-              <TabPanels className="lg:col-span-7 lg:hidden">
+              {/* On mobile, show panel descriptions below; on desktop pills include descriptions inline */}
+              <TabPanels className="lg:col-span-12 lg:hidden">
                 {features.map((feature) => (
                   <TabPanel key={feature.title} unmount={false} className="group">
                     <div className="relative mt-2 px-4 sm:px-6 lg:hidden">
@@ -161,14 +151,7 @@ export function PrimaryFeatures() {
                   </TabPanel>
                 ))}
               </TabPanels>
-              {/* Right-side dashboard on desktop; stacked on mobile */}
-              <div className="mt-8 px-4 sm:px-6 lg:mt-0 lg:col-span-7 xl:col-span-8">
-                {/* Mobile label for clarity */}
-                <p className="mb-3 text-sm font-medium text-white/80 lg:hidden">Live dashboard</p>
-                <div className="rounded-xl lg:overflow-hidden lg:bg-white lg:shadow-lg lg:ring-1 lg:ring-slate-900/10 sm:shadow-xl sm:shadow-blue-900/20">
-                  <DashboardPreview />
-                </div>
-              </div>
+              {/* Dashboard removed from here; it's now a standalone section below Hero */}
             </>
           )}
         </TabGroup>
