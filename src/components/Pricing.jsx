@@ -2,6 +2,8 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
+import Image from 'next/image'
+import backgroundImage from '@/images/background-features.jpg'
 
 function SwirlyDoodle() { return null }
 
@@ -85,8 +87,16 @@ function classNames(...classes) {
 
 export function Pricing() {
   return (
-    <section id="pricing" aria-label="Packages" className="bg-gradient-to-b from-blue-700 via-indigo-700 to-blue-800 py-20 sm:py-32">
-      <Container>
+    <section id="pricing" aria-label="Packages" className="relative overflow-hidden bg-blue-600 py-20 sm:py-32">
+      <Image
+        className="absolute top-1/2 left-1/2 max-w-none translate-x-[-44%] translate-y-[-42%]"
+        src={backgroundImage}
+        alt=""
+        width={2245}
+        height={1636}
+        unoptimized
+      />
+      <Container className="relative">
         {/* Intentionally no section heading per request */}
         <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2">
           {tiers.map((tier, tierIdx) => (
