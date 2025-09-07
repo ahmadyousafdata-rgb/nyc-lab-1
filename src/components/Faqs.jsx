@@ -21,37 +21,62 @@ function MinusIcon(props) {
   )
 }
 
-// Flattened FAQ content (from previous version)
+// AI automation-focused FAQ content for nyx Lab
 const faqs = [
   {
-    question: 'Does nyx Lab What is AI automation in business?',
+    question: 'What is AI automation and how can it help my business?',
     answer:
-      'Well no, but if you move AI automation uses artificial intelligence to perform tasks, processes, or decisions without constant human input. In business, it streamlines operations, reduces costs, and improves accuracy across departments like Real estate Agent, sales, marketing, HR, and customer service. company offshore you can probably ignore it.',
+      'AI automation uses machine learning and LLMs to handle repetitive tasks, orchestrate workflows, and make data-driven decisions without constant human input. For most teams this means faster response times, fewer manual errors, and lower costs across sales, operations, customer service, and back-office work.',
   },
   {
-    question: 'How do I apply for a job How can I integrate AI into my business?',
+    question: 'What services does nyx Lab provide?',
     answer:
-      'We only hire our Start by identifying areas with repetitive tasks or data-heavy decisions. Then, define clear goals and choose the right AI tools or partners. At The Gen AI, we guide teams through AI strategy, pilot projects, and full-scale implementation.',
+      'We design, build, and operate AI systems: lead capture and qualification, proposal and presentation automation, inbox triage and follow-ups, scheduling and CRM updates, executive enablement and training, and custom end-to-end integrations tailored to your stack.',
   },
   {
-    question: 'What was What are the benefits of AI automation?',
+    question: 'Which industries do you serve?',
     answer:
-      'AI automation boosts productivity, speeds up operations, reduces manual errors, and lowers costs. It also enhances customer experience and enables your team to focus on high-value tasks instead of repetitive ones.',
+      'We focus on real estate, healthcare administration, and e‑commerce, and also support professional services and B2B teams. Our systems plug into tools you already use to remove busywork and accelerate revenue workflows.',
   },
   {
-    question: 'What types of AI solutions does nyx Lab offer?',
+    question: 'Do I need technical expertise to adopt AI automation?',
     answer:
-      'AI-powered business development, Proposal & Presentation Automation, AI Strategy & Executive Training, Internal Project Brief Generator, Custom end-to-end AI integrations tailored to your business goals',
+      'No. We implement user-friendly workflows and provide onboarding and training so your team can use the system day one. We handle design, setup, integrations, monitoring, and iteration.',
   },
   {
-    question: 'Do I need technical knowledge to use AI in my company?',
+    question: 'How do engagements work?',
     answer:
-      'Not at all. We design user-friendly systems and provide advisory support, enabling your team to adopt AI without requiring deep technical expertise. We focus on business results, not complexity.',
+      'We start with a short discovery to identify high-ROI use cases, run a focused pilot (1–3 weeks), then scale to a production system with measurable KPIs. We can hand off to your team or operate the system for you.',
+  },
+  {
+    question: 'What tools and platforms can you integrate with?',
+    answer:
+      'Common integrations include CRM (HubSpot, Salesforce), communication (iMessage, SMS, email), calendars, EHR/EMR and scheduling tools, e‑commerce platforms, and internal databases/APIs. If it has an API, we can usually connect it.',
   },
   {
     question: 'What’s the difference between AI agents and full AI systems?',
     answer:
-      'AI agents are tools that handle isolated tasks, like sending emails or answering queries. AI systems are broader, combining agents, data flows, and automation into a cohesive solution that delivers measurable outcomes. We build systems that drive real business value.',
+      'AI agents complete specific tasks (qualify a lead, draft a reply). Full systems connect multiple agents with data pipelines, business rules, and human-in-the-loop steps to deliver reliable outcomes. nyx Lab designs for reliability, auditability, and ROI.',
+  },
+  {
+    question: 'Is our data secure and private?',
+    answer:
+      'Yes. We follow least-privilege access, segregated environments, encryption in transit and at rest when supported by the platform, and vendor controls aligned to your requirements. We can scope deployments to use your accounts and data retention policies.',
+  },
+  {
+    question: 'How is pricing structured?',
+    answer:
+      'Pricing depends on scope and usage. Typical models include a fixed pilot, then a monthly platform and maintenance fee plus pass-through model/API costs. We define clear KPIs so value and spend stay aligned.',
+  },
+  {
+    question: 'How quickly will we see results?',
+    answer:
+      'Most pilots deliver measurable impact within the first 2–3 weeks (faster response times, higher conversion, fewer manual touches). Production rollouts follow once KPIs are validated.',
+  },
+  {
+    question: 'How do we get started?',
+    answer:
+      'Send us a brief about your workflow and tools. We will identify quick wins and propose a pilot plan with timeline, integrations, and expected ROI.',
   },
 ]
 
