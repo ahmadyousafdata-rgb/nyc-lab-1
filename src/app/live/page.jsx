@@ -3,6 +3,21 @@ import { Footer } from '@/components/Footer'
 import { Container } from '@/components/Container'
 import SectionHeading from '@/components/SectionHeading'
 import Link from 'next/link'
+import Script from 'next/script'
+
+export const metadata = {
+  title: 'Live AI Automation Projects',
+  description:
+    'See live AI automation projects by nyx Lab: lead qualification, proposal automation, inbox triage, scheduling, and CRM sync for real estate, healthcare, and e‑commerce.',
+  alternates: { canonical: '/live' },
+  openGraph: {
+    title: 'Live AI Automation Projects – nyx Lab',
+    description:
+      'A curated showcase of live AI automation projects and workflows: lead capture and qualification, proposal automation, inbox triage, scheduling and CRM sync.',
+    url: 'https://nyxlab.ai/live',
+    type: 'website',
+  },
+}
 
 const projects = [
   {
@@ -67,15 +82,25 @@ const projects = [
   },
 ]
 
-function Tag({ children }) {
-  return (
-    <span className="inline-flex items-center rounded-md bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-700 ring-1 ring-inset ring-slate-200">
-      {children}
-    </span>
-  )
-}
-
 export default function LiveShowcase() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Live AI Automation Projects',
+    description:
+      'Live demos of AI automation for real estate, healthcare, and e‑commerce — lead qualification, proposal automation, inbox triage, scheduling, and CRM sync.',
+    url: 'https://nyxlab.ai/live',
+    hasPart: {
+      '@type': 'ItemList',
+      itemListElement: projects.map((p, idx) => ({
+        '@type': 'ListItem',
+        position: idx + 1,
+        url: 'https://nyxlab.ai/live',
+        name: p.title,
+        description: p.description,
+      })),
+    },
+  }
   return (
     <>
       <Header />
@@ -88,14 +113,26 @@ export default function LiveShowcase() {
             align="center"
           />
 
+          {/* SEO-focused intro copy */}
+          <section className="mx-auto mt-8 max-w-3xl text-center">
+            <p className="text-base text-slate-700">
+              Explore production-ready AI automation for{' '}
+              <strong>real estate</strong>, <strong>healthcare administration</strong>, and{' '}
+              <strong>e‑commerce</strong>. See how <strong>AI agents</strong> qualify leads,
+              automate <strong>inbox triage</strong>, generate <strong>proposals</strong>,
+              book <strong>appointments</strong>, and keep your <strong>CRM</strong> updated in
+              real time.
+            </p>
+          </section>
+
           <section className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((p) => (
               <div key={p.title} className="flex h-full flex-col rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
                 <h3 className="font-display text-lg font-semibold text-slate-900">{p.title}</h3>
-                <p className="mt-2 text-sm text-slate-700">{p.description}</p>
+                <p className="mt-2 text-sm">{p.description}</p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {p.tags.map((t) => (
-                    <Tag key={t}>{t}</Tag>
+                    <span key={t} className="inline-flex items-center rounded-md bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-700 ring-1 ring-inset ring-slate-200">{t}</span>
                   ))}
                 </div>
                 <div className="mt-5">
@@ -109,10 +146,43 @@ export default function LiveShowcase() {
               </div>
             ))}
           </section>
+
+          {/* Additional SEO sections */}
+          <section className="mx-auto mt-16 max-w-5xl">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                <h4 className="font-display text-base font-semibold text-slate-900">Use cases we demo</h4>
+                <ul className="mt-3 list-disc pl-5 text-sm text-slate-700">
+                  <li>Lead capture, qualification, and nurturing</li>
+                  <li>Proposal and presentation automation</li>
+                  <li>Inbox triage, routing, and follow-ups</li>
+                  <li>Scheduling, reminders, and CRM sync</li>
+                </ul>
+              </div>
+              <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                <h4 className="font-display text-base font-semibold text-slate-900">Integrations & stack</h4>
+                <ul className="mt-3 list-disc pl-5 text-sm text-slate-700">
+                  <li>HubSpot, Salesforce, calendars, SMS/iMessage, email</li>
+                  <li>E‑commerce platforms and product catalogs</li>
+                  <li>EHR/EMR and scheduling tools (healthcare)</li>
+                  <li>Custom APIs and internal databases</li>
+                </ul>
+              </div>
+              <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                <h4 className="font-display text-base font-semibold text-slate-900">Outcomes & KPIs</h4>
+                <ul className="mt-3 list-disc pl-5 text-sm text-slate-700">
+                  <li>Faster response times and SLA adherence</li>
+                  <li>Higher conversion and show-up rates</li>
+                  <li>Reduced manual touches and errors</li>
+                  <li>Auditability, reliability, and measurable ROI</li>
+                </ul>
+              </div>
+            </div>
+          </section>
         </Container>
       </main>
+      <Script id="ld-json-live" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Footer />
     </>
   )
 }
-

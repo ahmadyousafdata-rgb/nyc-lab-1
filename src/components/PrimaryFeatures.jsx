@@ -11,6 +11,7 @@ import screenshotExpenses from '@/images/screenshots/expenses.png'
 import screenshotPayroll from '@/images/screenshots/payroll.png'
 import screenshotReporting from '@/images/screenshots/reporting.png'
 import screenshotVatReturns from '@/images/screenshots/vat-returns.png'
+import DashboardPreview from '@/components/DashboardPreview'
 
 const features = [
   {
@@ -163,14 +164,8 @@ export function PrimaryFeatures() {
                         {feature.description}
                       </p>
                     </div>
-                    <div className="relative z-10 mt-10 w-180 overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 transition-transform duration-300 group-data-[selected]:scale-[1.01] lg:group-data-[selected]:scale-[1.02] group-data-[selected]:shadow-2xl sm:w-auto lg:mt-0 lg:w-271.25">
-                      <Image
-                        className="w-full"
-                        src={feature.image}
-                        alt=""
-                        priority
-                        sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
-                      />
+                    <div className="relative z-10 mt-10 w-180 transition-transform duration-300 group-data-[selected]:scale-[1.01] lg:group-data-[selected]:scale-[1.02] sm:w-auto lg:mt-0 lg:w-271.25">
+                      <DashboardPreview />
                     </div>
                   </TabPanel>
                 ))}
