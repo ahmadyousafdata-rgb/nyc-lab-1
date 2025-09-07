@@ -7,10 +7,6 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import backgroundImage from '@/images/background-features.jpg'
-import screenshotExpenses from '@/images/screenshots/expenses.png'
-import screenshotPayroll from '@/images/screenshots/payroll.png'
-import screenshotReporting from '@/images/screenshots/reporting.png'
-import screenshotVatReturns from '@/images/screenshots/vat-returns.png'
 import DashboardPreview from '@/components/DashboardPreview'
 
 const features = [
@@ -18,25 +14,21 @@ const features = [
     title: 'Lead Engagement',
     description:
       'AI assistants that book appointments, send reminders, and complete tasks across channels — available 24/7 to engage every lead.',
-    image: screenshotPayroll,
   },
   {
     title: 'Voice Lead Qualification',
     description:
       'Autonomous inbound/outbound calling to screen and score leads, summarize calls, and route qualified prospects to your calendar.',
-    image: screenshotExpenses,
   },
   {
     title: 'Omnichannel Sales Agents',
     description:
       'Consistent conversations across WhatsApp, Instagram, SMS, and email — brand‑tuned messaging, instant replies, and smart follow‑ups.',
-    image: screenshotVatReturns,
   },
   {
     title: 'AI CRM for Real Estate',
     description:
       'Capture leads, qualify by location and criteria, and auto‑book showings — close more deals without the admin burden.',
-    image: screenshotReporting,
   },
 ]
 
@@ -164,15 +156,18 @@ export function PrimaryFeatures() {
                         {feature.description}
                       </p>
                     </div>
-                    <div className="relative z-10 mt-10 w-180 transition-transform duration-300 group-data-[selected]:scale-[1.01] lg:group-data-[selected]:scale-[1.02] sm:w-auto lg:mt-0 lg:w-271.25">
-                      <DashboardPreview />
-                    </div>
+                    {/* Single shared dashboard is rendered below the TabGroup */}
+                    <div className="h-4" />
                   </TabPanel>
                 ))}
               </TabPanels>
             </>
           )}
         </TabGroup>
+        {/* One shared dashboard for all features */}
+        <div className="relative z-10 mt-10 overflow-hidden rounded-xl bg-white shadow-xl shadow-blue-900/20">
+          <DashboardPreview />
+        </div>
       </Container>
     </section>
   )
