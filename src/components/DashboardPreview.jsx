@@ -49,7 +49,27 @@ function BrowserWindow({ children }) {
   )
 }
 
-export default function DashboardPreview() {
+function IPhoneFrame({ children }) {
+  return (
+    <div className="mx-auto w-full max-w-[22rem]">
+      <div className="relative mx-auto aspect-[9/19.5] w-full rounded-[2.6rem] bg-black p-2 shadow-2xl ring-1 ring-black/40">
+        {/* Bezel */}
+        <div className="h-full w-full rounded-[2rem] bg-black p-1">
+          {/* Screen */}
+          <div className="relative h-full w-full overflow-hidden rounded-[1.8rem] bg-white">
+            {/* Notch */}
+            <div className="pointer-events-none absolute left-1/2 top-0 z-10 h-5 w-32 -translate-x-1/2 rounded-b-2xl bg-black" />
+            <div className="h-full w-full">
+              {children}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function DashboardContent() {
   const bars = [60, 48, 72, 44, 80, 66, 92]
   const rows = [
     { name: 'Ava Realty', stage: 'Qualified', channel: 'SMS', score: 82 },
@@ -59,39 +79,38 @@ export default function DashboardPreview() {
   ]
 
   return (
-    <BrowserWindow>
-      <div className="flex w-full bg-white">
-        {/* Sidebar */}
-        <aside className="hidden sm:block w-52 shrink-0 border-r border-slate-200 bg-slate-50/60 p-3">
-          <div className="flex items-center gap-2 px-1">
-            <MonogramIcon className="h-5 w-5" />
-            <span className="text-sm font-semibold text-slate-800">nyx Lab</span>
-          </div>
-          <nav className="mt-4 space-y-1 text-sm">
-            {[
-              { label: 'Overview', active: true },
-              { label: 'Leads' },
-              { label: 'Automations' },
-              { label: 'Channels' },
-              { label: 'Reports' },
-              { label: 'Settings' },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className={
-                  'cursor-default rounded-md px-3 py-2 ' +
-                  (item.active
-                    ? 'bg-white text-slate-900 shadow-sm ring-1 ring-inset ring-slate-200'
-                    : 'text-slate-700 hover:bg-white/70 hover:shadow-sm')
-                }
-              >
-                {item.label}
-              </div>
-            ))}
-          </nav>
-        </aside>
-        {/* Main content */}
-        <div className="min-w-0 flex-1">
+    <div className="flex w-full bg-white">
+      {/* Sidebar */}
+      <aside className="hidden sm:block w-52 shrink-0 border-r border-slate-200 bg-slate-50/60 p-3">
+        <div className="flex items-center gap-2 px-1">
+          <MonogramIcon className="h-5 w-5" />
+          <span className="text-sm font-semibold text-slate-800">nyx Lab</span>
+        </div>
+        <nav className="mt-4 space-y-1 text-sm">
+          {[
+            { label: 'Overview', active: true },
+            { label: 'Leads' },
+            { label: 'Automations' },
+            { label: 'Channels' },
+            { label: 'Reports' },
+            { label: 'Settings' },
+          ].map((item) => (
+            <div
+              key={item.label}
+              className={
+                'cursor-default rounded-md px-3 py-2 ' +
+                (item.active
+                  ? 'bg-white text-slate-900 shadow-sm ring-1 ring-inset ring-slate-200'
+                  : 'text-slate-700 hover:bg-white/70 hover:shadow-sm')
+              }
+            >
+              {item.label}
+            </div>
+          ))}
+        </nav>
+      </aside>
+      {/* Main content */}
+      <div className="min-w-0 flex-1">
         <div className="grid grid-cols-1 gap-3 p-3 sm:grid-cols-3 sm:gap-4 sm:p-6">
           <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
             <p className="text-xs font-medium text-slate-500">Leads processed (7d)</p>
@@ -190,8 +209,26 @@ export default function DashboardPreview() {
             </div>
           </div>
         </div>
-        </div>
       </div>
-    </BrowserWindow>
+    </div>
+  )
+}
+
+export default function DashboardPreview() {
+  return (
+    <>
+      {/* Mobile: iPhone frame */}
+      <div className="sm:hidden">
+        <IPhoneFrame>
+          <DashboardContent />
+        </IPhoneFrame>
+      </div>
+      {/* Tablet/Desktop: browser window */}
+      <div className="hidden sm:block">
+        <BrowserWindow>
+          <DashboardContent />
+        </BrowserWindow>
+      </div>
+    </>
   )
 }

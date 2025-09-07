@@ -165,7 +165,7 @@ export function PrimaryFeatures() {
               <div className="mt-8 px-4 sm:px-6 lg:mt-0 lg:col-span-7 xl:col-span-8">
                 {/* Mobile label for clarity */}
                 <p className="mb-3 text-sm font-medium text-white/80 lg:hidden">Live dashboard</p>
-                <div className="overflow-hidden rounded-xl bg-white shadow-lg ring-1 ring-slate-900/10 sm:shadow-xl sm:shadow-blue-900/20">
+                <div className="rounded-xl lg:overflow-hidden lg:bg-white lg:shadow-lg lg:ring-1 lg:ring-slate-900/10 sm:shadow-xl sm:shadow-blue-900/20">
                   <DashboardPreview />
                 </div>
               </div>
