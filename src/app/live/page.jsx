@@ -2,6 +2,7 @@ import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { Container } from '@/components/Container'
 import SectionHeading from '@/components/SectionHeading'
+import HomeDashboardSection from '@/components/HomeDashboardSection'
 import Link from 'next/link'
 import Script from 'next/script'
 
@@ -180,6 +181,9 @@ export default function LiveShowcase() {
             </div>
           </section>
         </Container>
+        
+        {/* Dashboard Section moved from home page */}
+        <HomeDashboardSection />
       </main>
       <Script id="ld-json-live" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Footer />
