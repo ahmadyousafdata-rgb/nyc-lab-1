@@ -2,7 +2,7 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 
 export function Hero() {
-  const videoHref = process.env.NEXT_PUBLIC_AI_CALLING_VIDEO_URL || '/videos/ai-calling-agent'
+  const videoHref = 'https://www.youtube.com/watch?v=Lx_olQCKJyk'
   return (
     <Container className="pt-20 pb-16 text-center lg:pt-32">
       <h1 className="mx-auto max-w-4xl font-display text-4xl font-medium tracking-tight text-slate-900 sm:text-6xl lg:text-7xl">
