@@ -2,6 +2,8 @@ import { Inter, Lexend } from 'next/font/google'
 import clsx from 'clsx'
 
 import '@/styles/tailwind.css'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
+import GoogleTagManager, { GoogleTagManagerNoScript } from '@/components/GoogleTagManager'
 
 export const metadata = {
   title: {
@@ -34,7 +36,14 @@ export default function RootLayout({ children }) {
         lexend.variable,
       )}
     >
-      <body className="flex h-full flex-col">{children}</body>
+      <head>
+        <GoogleAnalytics />
+        <GoogleTagManager />
+      </head>
+      <body className="flex h-full flex-col">
+        <GoogleTagManagerNoScript />
+        {children}
+      </body>
     </html>
   )
 }
