@@ -1,6 +1,6 @@
 import Script from 'next/script'
 
-const GTM_ID = 'GTM-XXXXXXX' // Replace with your actual GTM ID
+const GTM_ID = 'GT-WP4TQ5FL'
 
 export default function GoogleTagManager() {
   return (
