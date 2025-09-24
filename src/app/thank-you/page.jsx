@@ -18,12 +18,19 @@ export default function ThankYou() {
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
-            // Push conversion event to GTM data layer
+            // Google Ads Conversion Tracking
+            gtag('event', 'conversion', {
+              'send_to': 'AW-17536704536/sE3TCJPAu5UbEJjAk6pB',
+              'value': 1.0,
+              'currency': 'USD'
+            });
+            
+            // GTM Data Layer Event for additional tracking
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
               'event': 'conversion',
               'conversion_id': 'AW-17536704536',
-              'conversion_label': 'CONVERSION_LABEL', // Replace with your actual conversion label
+              'conversion_label': 'sE3TCJPAu5UbEJjAk6pB',
               'conversion_value': 1.0,
               'conversion_currency': 'USD'
             });
