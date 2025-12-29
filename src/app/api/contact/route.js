@@ -22,9 +22,12 @@ export async function POST(request) {
     // Fallback: if CONTACT_TO_EMAIL is not set, send to EMAIL_FROM
     const CONTACT_TO = CONTACT_TO_EMAIL_ENV || EMAIL_FROM
 
-    if (!RESEND_API_KEY) {
+    if (!RESEND_API_KEY || !EMAIL_FROM) {
+      const missing = []
+      if (!RESEND_API_KEY) missing.push('RESEND_API_KEY')
+      if (!EMAIL_FROM) missing.push('EMAIL_FROM')
       return NextResponse.json(
-        { error: 'Server email configuration missing', missing: ['RESEND_API_KEY'] },
+        { error: 'Server email configuration missing', missing },
         { status: 500 }
       )
     }
@@ -69,17 +72,20 @@ export async function POST(request) {
 
     // Fire-and-forget auto-reply to the submitter (does not block UX)
     if (email) {
-      const ackSubject = 'We received your request — nyx Lab'
+      const ackSubject = 'Thanks for reaching out to NyxLab'
+      const name = `${firstName} ${lastName}`.trim()
+      const greeting = name ? `Hi ${name},` : 'Hi there,'
       const ackHtml = `
-        <div>
-          <p>Hi ${firstName || ''}${firstName || lastName ? ',' : ''}</p>
-          <p>Thanks for reaching out to nyx Lab. We’ve received your request and will get back to you within 5 minutes.</p>
-          <p>If this was not you, please ignore this email.</p>
-          <hr />
-          <p style="font-size:12px;color:#6b7280;">This is an automated confirmation from nyxlab.ai</p>
+        <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;color:#111827;line-height:1.45;">
+          <p>${greeting}</p>
+          <p>Thanks for reaching out to NyxLab — your request has been received and our team is reviewing it now.</p>
+          <p>We’ll get back to you shortly with the next steps. If this message wasn’t intended for you, please ignore it.</p>
+          <p style="margin-top:24px;">Best regards,<br/>NyxLab Support Team<br/><a href="https://nyxlab.ai" style="color:#2563eb;text-decoration:none;">nyxlab.ai</a></p>
+          <hr style="margin:24px 0;border:none;border-top:1px solid #e5e7eb;" />
+          <p style="font-size:12px;color:#6b7280;margin:0;">This automated confirmation was sent from nyxlab.ai</p>
         </div>
       `
-      const ackText = `Hi ${firstName || ''}${firstName || lastName ? ',' : ''}\n\nWe’ve received your request and will get back to you within 5 minutes.\n\n— nyx Lab (nyxlab.ai)`
+      const ackText = `${greeting}\n\nThanks for reaching out to NyxLab — your request has been received and our team is reviewing it now.\n\nWe’ll get back to you shortly with the next steps. If this message wasn’t intended for you, please ignore it.\n\nBest regards,\nNyxLab Support Team\nnyxlab.ai`
       // Intentionally not awaited; ensure it doesn't block the redirect
       fetch('https://api.resend.com/emails', {
         method: 'POST',
