@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server'
 
+const DEFAULT_SUPPORT_FROM = 'NyxLab Support <support@nyxlab.ai>'
+
 export const runtime = 'nodejs'
 
 export async function POST(request) {
@@ -14,30 +16,20 @@ export async function POST(request) {
     const message = form.get('message') || ''
 
     const RESEND_API_KEY = process.env.RESEND_API_KEY
-    const EMAIL_FROM = process.env.EMAIL_FROM
+    const EMAIL_FROM = process.env.EMAIL_FROM || DEFAULT_SUPPORT_FROM
     const CONTACT_TO_EMAIL_ENV = process.env.CONTACT_TO_EMAIL
 
     // Fallback: if CONTACT_TO_EMAIL is not set, send to EMAIL_FROM
     const CONTACT_TO = CONTACT_TO_EMAIL_ENV || EMAIL_FROM
 
-    if (!RESEND_API_KEY || !EMAIL_FROM) {
-      const missing = []
-      if (!RESEND_API_KEY) missing.push('RESEND_API_KEY')
-      if (!EMAIL_FROM) missing.push('EMAIL_FROM')
+    if (!RESEND_API_KEY) {
       return NextResponse.json(
-        { error: 'Server email configuration missing', missing },
+        { error: 'Server email configuration missing', missing: ['RESEND_API_KEY'] },
         { status: 500 }
       )
     }
 
     const subject = 'New consultation request from register page'
-    // Build a dynamic From name for internal notification using submitter's first name.
-    // Keeps the verified sender address from EMAIL_FROM.
-    const fromAddressMatch = EMAIL_FROM && EMAIL_FROM.match(/<([^>]+)>/)
-    const fromAddress = fromAddressMatch ? fromAddressMatch[1] : EMAIL_FROM
-    const internalFrom = firstName
-      ? `${firstName} <${fromAddress}>`
-      : EMAIL_FROM
     const html = `
       <div>
         <h2>New Consultation Request</h2>
@@ -58,7 +50,7 @@ export async function POST(request) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: internalFrom,
+        from: EMAIL_FROM,
         to: [CONTACT_TO],
         subject,
         html,
