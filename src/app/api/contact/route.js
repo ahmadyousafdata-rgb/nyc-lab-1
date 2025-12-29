@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 
 const DEFAULT_SUPPORT_FROM = 'NyxLab Support <support@nyxlab.ai>'
+const DEFAULT_CONTACT_TO = 'info@nyxlab.ai'
 
 export const runtime = 'nodejs'
 
@@ -18,9 +19,7 @@ export async function POST(request) {
     const RESEND_API_KEY = process.env.RESEND_API_KEY
     const EMAIL_FROM = process.env.EMAIL_FROM || DEFAULT_SUPPORT_FROM
     const CONTACT_TO_EMAIL_ENV = process.env.CONTACT_TO_EMAIL
-
-    // Fallback: if CONTACT_TO_EMAIL is not set, send to EMAIL_FROM
-    const CONTACT_TO = CONTACT_TO_EMAIL_ENV || EMAIL_FROM
+    const CONTACT_TO = CONTACT_TO_EMAIL_ENV || DEFAULT_CONTACT_TO
 
     if (!RESEND_API_KEY || !EMAIL_FROM) {
       const missing = []
