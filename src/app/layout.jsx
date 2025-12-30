@@ -39,6 +39,10 @@ export default function RootLayout({ children }) {
       <head>
         <GoogleAnalytics />
         <GoogleTagManager />
+        <meta
+          name="facebook-domain-verification"
+          content="rfv1uihc0dfbcoc1oepr0zcvlavdz3"
+        />
       </head>
       <body className="flex h-full flex-col">
         <GoogleTagManagerNoScript />
