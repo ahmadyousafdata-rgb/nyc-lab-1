@@ -4,6 +4,7 @@ import clsx from 'clsx'
 import '@/styles/tailwind.css'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import GoogleTagManager, { GoogleTagManagerNoScript } from '@/components/GoogleTagManager'
+import CalendlyBadge from '@/components/CalendlyBadge'
 
 export const metadata = {
   metadataBase: new URL('https://nyxlab.ai'),
@@ -65,6 +66,7 @@ export default function RootLayout({ children }) {
       <body className="flex h-full flex-col">
         <GoogleTagManagerNoScript />
         {children}
+        <CalendlyBadge />
       </body>
     </html>
   )
