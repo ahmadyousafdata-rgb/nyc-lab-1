@@ -15,7 +15,7 @@ export function Footer() {
             <p className="mt-4 text-sm text-slate-700">AI automation to save time and drive growth.</p>
             <div className="mt-4 text-sm text-slate-700 space-y-1">
               <p>📞 +1 (848) 219-0887</p>
-              <p>🏢 414 Bayridge Ave, Brooklyn, NY 11220</p>
+              <p>🏢 Bay Ridge, Brooklyn, New York</p>
             </div>
             {/* Instant response email CTAs */}
             <div className="mt-6">
