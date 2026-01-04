@@ -1,4 +1,5 @@
 import { Inter, Lexend } from 'next/font/google'
+import Script from 'next/script'
 import clsx from 'clsx'
 
 import '@/styles/tailwind.css'
@@ -61,6 +62,18 @@ export default function RootLayout({ children }) {
       <head>
         <GoogleAnalytics />
         <GoogleTagManager />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-CMLT7XKH23"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-CMLT7XKH23');
+          `}
+        </Script>
         <meta property="og:title" content="nyx Lab - AI Automation Solutions for Modern Businesses" />
         <meta
           property="og:description"
