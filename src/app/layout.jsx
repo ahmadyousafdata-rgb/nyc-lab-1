@@ -8,13 +8,13 @@ import CalendlyBadge from '@/components/CalendlyBadge'
 
 export const metadata = {
   metadataBase: new URL('https://www.nyxlab.ai'),
-  title: 'nyx Lab - AI Automation Solutions',
+  title: 'nyx Lab | AI Automation for Real Estate & Healthcare',
   description:
     'AI-powered automation for real estate, healthcare, and e-commerce businesses. Streamline workflows and boost efficiency.',
   openGraph: {
     url: 'https://www.nyxlab.ai',
     type: 'website',
-    title: 'nyx Lab - AI Automation Solutions',
+    title: 'nyx Lab | AI Automation for Real Estate & Healthcare',
     description:
       'AI-powered automation for real estate, healthcare, and e-commerce businesses. Streamline workflows and boost efficiency.',
     images: [
@@ -28,7 +28,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'nyx Lab - AI Automation Solutions',
+    title: 'nyx Lab | AI Automation for Real Estate & Healthcare',
     description:
       'AI-powered automation for real estate, healthcare, and e-commerce businesses. Streamline workflows and boost efficiency.',
     images: ['https://www.nyxlab.ai/og-image.png'],
