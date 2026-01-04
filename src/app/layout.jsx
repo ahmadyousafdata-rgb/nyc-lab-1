@@ -8,15 +8,15 @@ import CalendlyBadge from '@/components/CalendlyBadge'
 
 export const metadata = {
   metadataBase: new URL('https://nyxlab.ai'),
-  title: 'NyxLab — AI Automation & Workflow Solutions',
+  title: 'nyx Lab - AI Automation Solutions',
   description:
-    'AI-powered workflow automation, voice agents, and CRM integration for real estate, healthcare, and service businesses.',
+    'AI-powered automation for real estate, healthcare, and e-commerce businesses. Streamline workflows and boost efficiency.',
   openGraph: {
-    title: 'NyxLab — AI Automation Solutions',
+    title: 'nyx Lab - AI Automation Solutions',
     description:
-      'AI-powered workflow automation, CRM integrations, and voice AI agents for modern businesses.',
-    url: 'https://nyxlab.ai',
-    siteName: 'NyxLab',
+      'AI-powered automation for real estate, healthcare, and e-commerce businesses. Streamline workflows and boost efficiency.',
+    url: 'https://www.nyxlab.ai/',
+    siteName: 'nyx Lab',
     images: [
       {
         url: '/og-image.png',
@@ -28,10 +28,11 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NyxLab — AI Automation & Workflow Solutions',
+    title: 'nyx Lab - AI Automation Solutions',
     description:
-      'AI-powered workflow automation, voice agents, and CRM integration for real estate, healthcare, and service businesses.',
+      'AI-powered automation for real estate, healthcare, and e-commerce businesses. Streamline workflows and boost efficiency.',
     images: ['/og-image.png'],
+    site: '@nyxlabai',
   },
 }
 
