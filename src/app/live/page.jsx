@@ -126,6 +126,12 @@ export default function LiveShowcase() {
             <div className="mt-4">
               <CalendlyInline />
             </div>
+            <div className="mt-4 space-y-1 text-center">
+              <h3 className="text-lg font-semibold text-slate-900">Live Showcase</h3>
+              <p className="text-sm text-slate-700">
+                Live AI automation projects — a curated set of real workflows we design, build, and operate. Request a live walkthrough to see how they plug into your tools and deliver measurable results.
+              </p>
+            </div>
           </section>
 
           {/* SEO-focused intro copy */}

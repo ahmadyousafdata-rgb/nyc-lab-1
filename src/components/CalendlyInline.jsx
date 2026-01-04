@@ -16,7 +16,7 @@ export default function CalendlyInline() {
       <div
         className="calendly-inline-widget"
         data-url="https://calendly.com/founder-nyxlab/30min"
-        style={{ minWidth: '320px', height: '700px' }}
+        style={{ minWidth: '320px', height: '540px' }}
       />
     </div>
   )
