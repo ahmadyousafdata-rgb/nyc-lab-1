@@ -10,13 +10,13 @@ export const metadata = {
   metadataBase: new URL('https://www.nyxlab.ai'),
   title: 'AI Automation for Real Estate & Healthcare | nyx Lab',
   description:
-    'AI-powered automation by nyx Lab AI to optimize workflows, reduce manual tasks, and improve team efficiency.',
+    'AI-powered automation by nyx Lab AI to optimize workflows, reduce manual tasks, improve team efficiency, and elevate experiences across real estate & healthcare.',
   openGraph: {
     url: 'https://www.nyxlab.ai/',
     type: 'website',
     title: 'AI Automation for Real Estate & Healthcare | nyx Lab',
     description:
-      'AI-powered automation by nyx Lab AI to optimize workflows, reduce manual tasks, and improve team efficiency.',
+      'AI-powered automation by nyx Lab AI to optimize workflows, reduce manual tasks, improve team efficiency, and elevate experiences across real estate & healthcare.',
     siteName: 'nyx Lab',
     images: [
       {
@@ -31,7 +31,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'AI Automation for Real Estate & Healthcare | nyx Lab',
     description:
-      'AI-powered automation by nyx Lab AI to optimize workflows, reduce manual tasks, and improve team efficiency.',
+      'AI-powered automation by nyx Lab AI to optimize workflows, reduce manual tasks, improve team efficiency, and elevate experiences across real estate & healthcare.',
     images: ['https://www.nyxlab.ai/og-image.png'],
   },
 }
@@ -64,7 +64,7 @@ export default function RootLayout({ children }) {
         <meta property="og:title" content="AI Automation for Real Estate & Healthcare | nyx Lab" />
         <meta
           property="og:description"
-          content="AI-powered automation by nyx Lab AI to optimize workflows, reduce manual tasks, and improve team efficiency."
+          content="AI-powered automation by nyx Lab AI to optimize workflows, reduce manual tasks, improve team efficiency, and elevate experiences across real estate & healthcare."
         />
         <meta property="og:image" content="https://www.nyxlab.ai/og-image.png" />
         <meta property="og:url" content="https://www.nyxlab.ai/" />
@@ -77,7 +77,7 @@ export default function RootLayout({ children }) {
         <meta name="twitter:title" content="AI Automation for Real Estate & Healthcare | nyx Lab" />
         <meta
           name="twitter:description"
-          content="AI-powered automation by nyx Lab AI to optimize workflows, reduce manual tasks, and improve team efficiency."
+          content="AI-powered automation by nyx Lab AI to optimize workflows, reduce manual tasks, improve team efficiency, and elevate experiences across real estate & healthcare."
         />
         <meta name="twitter:image" content="https://www.nyxlab.ai/og-image.png" />
         <meta
