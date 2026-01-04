@@ -1,10 +1,12 @@
+import Link from 'next/link'
+import Script from 'next/script'
+
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { Container } from '@/components/Container'
 import SectionHeading from '@/components/SectionHeading'
 import HomeDashboardSection from '@/components/HomeDashboardSection'
-import Link from 'next/link'
-import Script from 'next/script'
+import CalendlyInline from '@/components/CalendlyInline'
 
 export const metadata = {
   title: 'Live AI Automation Projects',
@@ -113,6 +115,18 @@ export default function LiveShowcase() {
             description="A curated set of real workflows we design, build, and operate. Request a live walkthrough to see how they plug into your tools and deliver measurable results."
             align="center"
           />
+
+          <section className="mx-auto mt-10 max-w-4xl rounded-2xl border border-slate-200 bg-slate-50/80 p-4 shadow-sm">
+            <div className="space-y-3 text-center">
+              <p className="text-sm font-semibold uppercase tracking-wide text-slate-600">Book a live session</p>
+              <p className="text-base text-slate-700">
+                Pick a time to see a live walkthrough first—Calendly is right here so you can schedule before exploring the demos.
+              </p>
+            </div>
+            <div className="mt-4">
+              <CalendlyInline />
+            </div>
+          </section>
 
           {/* SEO-focused intro copy */}
           <section className="mx-auto mt-8 max-w-3xl text-center">
