@@ -60,6 +60,10 @@ export default function RootLayout({ children }) {
       <head>
         <GoogleAnalytics />
         <GoogleTagManager />
+        <meta property="og:image" content="https://www.nyxlab.ai/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:image" content="https://www.nyxlab.ai/og-image.png" />
         <meta
           name="facebook-domain-verification"
           content="rfv1uihc0dfbcoc1oepr0zcvlavdz3"
