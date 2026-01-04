@@ -7,19 +7,19 @@ import GoogleTagManager, { GoogleTagManagerNoScript } from '@/components/GoogleT
 import CalendlyBadge from '@/components/CalendlyBadge'
 
 export const metadata = {
-  metadataBase: new URL('https://nyxlab.ai'),
-  title: 'nyx Lab - AI Automation Solutions',
+  metadataBase: new URL('https://www.nyxlab.ai'),
+  title: 'NyxLab — AI Automation for Real Estate & Healthcare',
   description:
     'AI-powered automation for real estate, healthcare, and e-commerce businesses. Streamline workflows and boost efficiency.',
   openGraph: {
-    title: 'nyx Lab - AI Automation Solutions',
+    title: 'NyxLab — AI Automation for Real Estate & Healthcare',
     description:
       'AI-powered automation for real estate, healthcare, and e-commerce businesses. Streamline workflows and boost efficiency.',
     url: 'https://www.nyxlab.ai/',
     siteName: 'nyx Lab',
     images: [
       {
-        url: '/og-image.png',
+        url: 'https://www.nyxlab.ai/og-image.png',
         width: 1200,
         height: 630,
       },
@@ -28,10 +28,10 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'nyx Lab - AI Automation Solutions',
+    title: 'NyxLab — AI Automation for Real Estate & Healthcare',
     description:
       'AI-powered automation for real estate, healthcare, and e-commerce businesses. Streamline workflows and boost efficiency.',
-    images: ['/og-image.png'],
+    images: ['https://www.nyxlab.ai/og-image.png'],
     site: '@nyxlabai',
   },
 }
