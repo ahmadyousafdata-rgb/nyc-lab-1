@@ -8,28 +8,30 @@ import CalendlyBadge from '@/components/CalendlyBadge'
 
 export const metadata = {
   metadataBase: new URL('https://nyxlab.ai'),
-  title: {
-    template: '%s | nyx Lab',
-    default: 'nyx Lab | AI Automation for Real Estate, Healthcare & E-Commerce',
-  },
+  title: 'NyxLab — AI Automation & Workflow Solutions',
   description:
-    'nyx Lab builds AI automation for real estate, healthcare, and e-commerce to streamline workflows, save time, and boost efficiency.',
-  alternates: {
-    canonical: '/',
-  },
+    'AI-powered workflow automation, voice agents, and CRM integration for real estate, healthcare, and service businesses.',
   openGraph: {
-    title: 'nyx Lab | AI Automation for Real Estate, Healthcare & E-Commerce',
+    title: 'NyxLab — AI Automation Solutions',
     description:
-      'nyx Lab builds AI automation for real estate, healthcare, and e-commerce to streamline workflows, save time, and boost efficiency.',
+      'AI-powered workflow automation, CRM integrations, and voice AI agents for modern businesses.',
     url: 'https://nyxlab.ai',
-    siteName: 'nyx Lab',
+    siteName: 'NyxLab',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'nyx Lab | AI Automation for Real Estate, Healthcare & E-Commerce',
+    title: 'NyxLab — AI Automation & Workflow Solutions',
     description:
-      'nyx Lab builds AI automation for real estate, healthcare, and e-commerce to streamline workflows, save time, and boost efficiency.',
+      'AI-powered workflow automation, voice agents, and CRM integration for real estate, healthcare, and service businesses.',
+    images: ['/og-image.png'],
   },
 }
 
