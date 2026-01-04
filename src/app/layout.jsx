@@ -8,30 +8,30 @@ import CalendlyBadge from '@/components/CalendlyBadge'
 
 export const metadata = {
   metadataBase: new URL('https://www.nyxlab.ai'),
-  title: 'Automation for Real-World Business Needs',
+  title: 'AI Automation for Real Estate & Healthcare | nyx Lab',
   description:
-    'Optimize workflows, reduce manual tasks, and improve team efficiency.',
+    'AI-powered automation by nyx Lab AI to optimize workflows, reduce manual tasks, and improve team efficiency.',
   openGraph: {
     url: 'https://www.nyxlab.ai/',
     type: 'website',
-    title: 'Automation for Real-World Business Needs',
+    title: 'AI Automation for Real Estate & Healthcare | nyx Lab',
     description:
-      'Optimize workflows, reduce manual tasks, and improve team efficiency.',
+      'AI-powered automation by nyx Lab AI to optimize workflows, reduce manual tasks, and improve team efficiency.',
     siteName: 'nyx Lab',
     images: [
       {
         url: 'https://www.nyxlab.ai/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Automation for Real-World Business Needs',
+        alt: 'AI Automation for Real Estate & Healthcare | nyx Lab',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Automation for Real-World Business Needs',
+    title: 'AI Automation for Real Estate & Healthcare | nyx Lab',
     description:
-      'Optimize workflows, reduce manual tasks, and improve team efficiency.',
+      'AI-powered automation by nyx Lab AI to optimize workflows, reduce manual tasks, and improve team efficiency.',
     images: ['https://www.nyxlab.ai/og-image.png'],
   },
 }
@@ -61,8 +61,11 @@ export default function RootLayout({ children }) {
       <head>
         <GoogleAnalytics />
         <GoogleTagManager />
-        <meta property="og:title" content="Automation for Real-World Business Needs" />
-        <meta property="og:description" content="Optimize workflows, reduce manual tasks, and improve team efficiency." />
+        <meta property="og:title" content="AI Automation for Real Estate & Healthcare | nyx Lab" />
+        <meta
+          property="og:description"
+          content="AI-powered automation by nyx Lab AI to optimize workflows, reduce manual tasks, and improve team efficiency."
+        />
         <meta property="og:image" content="https://www.nyxlab.ai/og-image.png" />
         <meta property="og:url" content="https://www.nyxlab.ai/" />
         <meta property="og:type" content="website" />
@@ -71,8 +74,11 @@ export default function RootLayout({ children }) {
         <meta property="og:image:height" content="630" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Automation for Real-World Business Needs" />
-        <meta name="twitter:description" content="Optimize workflows, reduce manual tasks, and improve team efficiency." />
+        <meta name="twitter:title" content="AI Automation for Real Estate & Healthcare | nyx Lab" />
+        <meta
+          name="twitter:description"
+          content="AI-powered automation by nyx Lab AI to optimize workflows, reduce manual tasks, and improve team efficiency."
+        />
         <meta name="twitter:image" content="https://www.nyxlab.ai/og-image.png" />
         <meta
           name="facebook-domain-verification"
