@@ -15,7 +15,7 @@ export function Footer() {
             <p className="mt-4 text-sm text-slate-700">AI automation to save time and drive growth.</p>
             <div className="mt-4 text-sm text-slate-700 space-y-1">
               <p>📞 +1 (848) 219-0887</p>
-              <p>🏢 Bay Ridge, Brooklyn, New York</p>
+              <p>📍 Bay Ridge, Brooklyn, New York</p>
             </div>
             {/* Instant response email CTAs */}
             <div className="mt-6">
@@ -39,7 +39,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Footer Nav (mirror header) — hidden on mobile */}
+          {/* Footer Nav */}
           <nav className="hidden md:block text-sm" aria-label="footer">
             <div className="flex flex-col items-center md:items-start gap-2">
               <NavLink href="/">Home</NavLink>
@@ -47,6 +47,7 @@ export function Footer() {
               <NavLink href="/#testimonials">Testimonials</NavLink>
               <NavLink href="/blogs">Blog</NavLink>
               <NavLink href="/register">Schedule a Call</NavLink>
+              <NavLink href="/privacy">Privacy Policy</NavLink>
             </div>
           </nav>
 
@@ -85,7 +86,9 @@ export function Footer() {
 
         <div className="flex flex-col items-center border-t border-slate-400/10 py-10 sm:flex-row sm:justify-between">
           <p className="text-sm text-slate-500">Copyright &copy; {new Date().getFullYear()} nyx Lab. All rights reserved.</p>
-          <div className="mt-6 sm:mt-0 text-xs text-slate-500">Privacy • Terms</div>
+          <div className="mt-6 sm:mt-0 text-xs text-slate-500">
+            <Link href="/privacy" className="hover:text-slate-700">Privacy Policy</Link>
+          </div>
         </div>
       </Container>
     </footer>
